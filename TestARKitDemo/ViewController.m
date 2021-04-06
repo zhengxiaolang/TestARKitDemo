@@ -57,7 +57,7 @@
 
 -(void)actionAfterViewDidLoad{
     
-    [self add3DModel];
+    
 }
 
 #pragma mark - lazy loading
@@ -125,4 +125,9 @@
     [self.scnView.scene.rootNode addChildNode:shipNode];
 }
 
+///点击屏幕 新增模型
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self add3DModel];
+}
 @end
