@@ -7,7 +7,7 @@
 
 #import "MTCatchTheFlatVC.h"
 
-@interface MTCatchTheFlatVC ()<ARSCNViewDelegate>
+@interface MTCatchTheFlatVC ()<ARSCNViewDelegate,ARSessionDelegate>
 
 @property(nonatomic,strong)ARSCNView *scnView;
 
@@ -99,7 +99,45 @@
 //}
 
 - (void)renderer:(id <SCNSceneRenderer>)renderer didAddNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor{
-    
+    if ([anchor isMemberOfClass:[ARPlaneAnchor class]]) {
+        NSLog(@"捕捉到平地");
+        
+        //添加一个3D平面模型，ARKit只有捕捉能力，锚点只是一个空间位置，要想更加清楚看到这个空间，我们需要给空间添加一个平地的3D模型来渲染他
+        
+        //1.获取捕捉到的平地锚点
+        ARPlaneAnchor *planeAnchor = (ARPlaneAnchor *)anchor;
+        //2.创建一个3D物体模型    （系统捕捉到的平地是一个不规则大小的长方形，这里笔者将其变成一个长方形，并且是否对平地做了一个缩放效果）
+        //参数分别是长宽高和圆角
+        SCNBox *plane = [SCNBox boxWithWidth:planeAnchor.extent.x*0.3 height:0 length:planeAnchor.extent.x*0.3 chamferRadius:0];
+        //3.使用Material渲染3D模型（默认模型是白色的，这里笔者改成红色）
+        plane.firstMaterial.diffuse.contents = [UIColor redColor];
+        
+        //4.创建一个基于3D物体模型的节点
+        SCNNode *planeNode = [SCNNode nodeWithGeometry:plane];
+        //5.设置节点的位置为捕捉到的平地的锚点的中心位置  SceneKit框架中节点的位置position是一个基于3D坐标系的矢量坐标SCNVector3Make
+        planeNode.position =SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z);
+        
+        //self.planeNode = planeNode;
+        [node addChildNode:planeNode];
+        
+        
+        //2.当捕捉到平地时，2s之后开始在平地上添加一个3D模型
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //1.创建一个花瓶场景
+            SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
+            //2.获取花瓶节点（一个场景会有多个节点，此处我们只写，花瓶节点则默认是场景子节点的第一个）
+            //所有的场景有且只有一个根节点，其他所有节点都是根节点的子节点
+            SCNNode *vaseNode = scene.rootNode.childNodes[0];
+            
+            //4.设置花瓶节点的位置为捕捉到的平地的位置，如果不设置，则默认为原点位置，也就是相机位置
+            vaseNode.position = SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z);
+            
+            //5.将花瓶节点添加到当前屏幕中
+            //!!!此处一定要注意：花瓶节点是添加到代理捕捉到的节点中，而不是AR试图的根节点。因为捕捉到的平地锚点是一个本地坐标系，而不是世界坐标系
+            [node addChildNode:vaseNode];
+        });
+    }
 }
 
 - (void)renderer:(id <SCNSceneRenderer>)renderer willUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor{
@@ -114,23 +152,65 @@
 
 /// 新增3D模型
 -(void)add3DModel{
-    SCNScene *scene = scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
-    
-    //2.获取花瓶节点（一个场景会有多个节点，此处我们只写，花瓶节点则默认是场景子节点的第一个）
-    //所有的场景有且只有一个根节点，其他所有节点都是根节点的子节点
-    SCNNode *shipNode = scene.rootNode.childNodes[0];
-    
-    //椅子比较大，可以可以调整Z轴的位置让它离摄像头远一点，，然后再往下一点（椅子太高我们坐不上去）就可以看得全局一点
-    shipNode.position = SCNVector3Make(0, -1, -1);//x/y/z/坐标相对于世界原点，也就是相机位置
-    
-    //3.将花瓶节点添加到当前屏幕中
-    [self.scnView.scene.rootNode addChildNode:shipNode];
+    //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D飞机）--------在右侧我添加了许多3D模型，只需要替换文件名即可
+        SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
+        //2.获取台灯节点（一个场景会有多个节点，此处我们只写，飞机节点则默认是场景子节点的第一个）
+        //所有的场景有且只有一个根节点，其他所有节点都是根节点的子节点
+        
+        SCNNode *shipNode = scene.rootNode.childNodes[0];
+        
+        self.planeNode = shipNode;
+        
+        //台灯比较大，适当缩放一下并且调整位置让其在屏幕中间
+        shipNode.scale = SCNVector3Make(0.5, 0.5, 0.5);
+        shipNode.position = SCNVector3Make(0, -15,-15);
+        ;
+        //一个台灯的3D建模不是一气呵成的，可能会有很多个子节点拼接，所以里面的子节点也要一起改，否则上面的修改会无效
+        for (SCNNode *node in shipNode.childNodes) {
+            node.scale = SCNVector3Make(0.5, 0.5, 0.5);
+            node.position = SCNVector3Make(0, -15,-15);
+            
+        }
+        
+        
+        self.planeNode.position = SCNVector3Make(0, 0, -20);
+        
+        //3.绕相机旋转
+        //绕相机旋转的关键点在于：在相机的位置创建一个空节点，然后将台灯添加到这个空节点，最后让这个空节点自身旋转，就可以实现台灯围绕相机旋转
+        //1.为什么要在相机的位置创建一个空节点呢？因为你不可能让相机也旋转
+        //2.为什么不直接让台灯旋转呢？ 这样的话只能实现台灯的自转，而不能实现公转
+        SCNNode *node1 = [[SCNNode alloc] init];
+        
+        //空节点位置与相机节点位置一致
+        node1.position = self.scnView.scene.rootNode.position;
+        
+        //将空节点添加到相机的根节点
+        [self.scnView.scene.rootNode addChildNode:node1];
+        
+        
+        // !!!将台灯节点作为空节点的子节点，如果不这样，那么你将看到的是台灯自己在转，而不是围着你转
+        [node1 addChildNode:self.planeNode];
+        
+        
+        //旋转核心动画
+        CABasicAnimation *moonRotationAnimation = [CABasicAnimation animationWithKeyPath:@"rotation"];
+        
+        //旋转周期
+        moonRotationAnimation.duration = 30;
+        
+        //围绕Y轴旋转360度  （不明白ARKit坐标系的可以看笔者之前的文章）
+        moonRotationAnimation.toValue = [NSValue valueWithSCNVector4:SCNVector4Make(0, 1, 0, M_PI * 2)];
+        //无限旋转  重复次数为无穷大
+        moonRotationAnimation.repeatCount = FLT_MAX;
+        
+        //开始旋转  ！！！：切记这里是让空节点旋转，而不是台灯节点。  理由同上
+        [node1 addAnimation:moonRotationAnimation forKey:@"moon rotation around earth"];
 }
 
 ///点击屏幕 新增模型
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self add3DModel];
+//    [self add3DModel];
 }
 #pragma mark -ARSessionDelegate
 

@@ -74,7 +74,7 @@
 -(ARSession *)session{
     if (!_session) {
         _session = [[ARSession alloc] init];
-        
+//        _session.delegate = self
     }
     return _session;
 }
@@ -97,6 +97,7 @@
 //}
 
 - (void)renderer:(id <SCNSceneRenderer>)renderer didAddNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor{
+    
     
 }
 
