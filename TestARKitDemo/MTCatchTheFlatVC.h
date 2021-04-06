@@ -1,7 +1,7 @@
 //
 //  MTCatchTheFlatVC.h
 //  TestARKitDemo
-//  捕捉平地
+//  捕捉平地 Plane detection
 //  Created by zhengxiaolang on 2021/4/6.
 //
 

@@ -106,11 +106,11 @@
         
         //1.获取捕捉到的平地锚点
         ARPlaneAnchor *planeAnchor = (ARPlaneAnchor *)anchor;
-        //2.创建一个3D物体模型    （系统捕捉到的平地是一个不规则大小的长方形，这里笔者将其变成一个长方形，并且是否对平地做了一个缩放效果）
+        //2.创建一个3D物体模型    （系统捕捉到的平地是一个不规则大小的长方形，这里我们将其变成一个长方形，并且是否对平地做了一个缩放效果）
         //参数分别是长宽高和圆角
         SCNBox *plane = [SCNBox boxWithWidth:planeAnchor.extent.x*0.3 height:0 length:planeAnchor.extent.x*0.3 chamferRadius:0];
-        //3.使用Material渲染3D模型（默认模型是白色的，这里笔者改成红色）
-        plane.firstMaterial.diffuse.contents = [UIColor redColor];
+        //3.使用Material渲染3D模型（默认模型是白色的，我改成显眼的绿色）
+        plane.firstMaterial.diffuse.contents = [UIColor greenColor];
         
         //4.创建一个基于3D物体模型的节点
         SCNNode *planeNode = [SCNNode nodeWithGeometry:plane];
@@ -152,7 +152,7 @@
 
 /// 新增3D模型
 -(void)add3DModel{
-    //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D飞机）--------在右侧我添加了许多3D模型，只需要替换文件名即可
+    //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D飞机 或者 花瓶）--------
         SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
         //2.获取台灯节点（一个场景会有多个节点，此处我们只写，飞机节点则默认是场景子节点的第一个）
         //所有的场景有且只有一个根节点，其他所有节点都是根节点的子节点
@@ -198,7 +198,7 @@
         //旋转周期
         moonRotationAnimation.duration = 30;
         
-        //围绕Y轴旋转360度  （不明白ARKit坐标系的可以看笔者之前的文章）
+        //围绕Y轴旋转360度  （不明白ARKit坐标系的可以看我们之前的文章）
         moonRotationAnimation.toValue = [NSValue valueWithSCNVector4:SCNVector4Make(0, 1, 0, M_PI * 2)];
         //无限旋转  重复次数为无穷大
         moonRotationAnimation.repeatCount = FLT_MAX;
@@ -214,7 +214,7 @@
 }
 #pragma mark -ARSessionDelegate
 
-//会话位置更新（监听相机的移动），此代理方法会调用非常频繁，只要相机移动就会调用，如果相机移动过快，会有一定的误差，具体的需要强大的算法去优化，笔者这里就不深入了
+//会话位置更新（监听相机的移动），此代理方法会调用非常频繁，只要相机移动就会调用，如果相机移动过快，会有一定的误差，具体的需要强大的算法去优化，这里就不深入了
 - (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
 {
     NSLog(@"相机移动");
