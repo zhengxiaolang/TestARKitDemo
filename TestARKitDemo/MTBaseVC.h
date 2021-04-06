@@ -7,10 +7,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import <SceneKit/SceneKit.h>
+#import <ARKit/ARKit.h>
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MTBaseVC : UIViewController
 
+
+@property(nonatomic,strong)UIButton *backBtn;
 
 /// 初始化事件
 -(void)initData;
@@ -26,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 进入VC后触发的事件
 -(void)actionAfterViewDidLoad;
+
+
+#pragma mark - back action
+-(void)gotoBack;
 
 @end
 

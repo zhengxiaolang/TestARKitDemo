@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA2D2B73261C377900BEBBA5 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2D2B72261C377900BEBBA5 /* Models.scnassets */; };
+		AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */; };
+		AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */; };
 		AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A995D261C02840019DF27 /* AppDelegate.m */; };
 		AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9960261C02840019DF27 /* SceneDelegate.m */; };
 		AA7A9964261C02840019DF27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9963261C02840019DF27 /* ViewController.m */; };
@@ -24,6 +26,10 @@
 
 /* Begin PBXFileReference section */
 		AA2D2B72261C377900BEBBA5 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+		AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCatchTheFlatVC.h; sourceTree = "<group>"; };
+		AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCatchTheFlatVC.m; sourceTree = "<group>"; };
+		AA2D2B86261C437B00BEBBA5 /* MTAdd3DModelVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAdd3DModelVC.h; sourceTree = "<group>"; };
+		AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAdd3DModelVC.m; sourceTree = "<group>"; };
 		AA7A9959261C02840019DF27 /* TestARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A995C261C02840019DF27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7A995D261C02840019DF27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -95,6 +101,10 @@
 				AA7A997E261C02EC0019DF27 /* MTBaseVC.m */,
 				AA7A9982261C0F8A0019DF27 /* ARSCNView+MT.h */,
 				AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */,
+				AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */,
+				AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */,
+				AA2D2B86261C437B00BEBBA5 /* MTAdd3DModelVC.h */,
+				AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */,
 			);
 			path = TestARKitDemo;
 			sourceTree = "<group>";
@@ -185,6 +195,8 @@
 				AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */,
 				AA7A996F261C02860019DF27 /* main.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
+				AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */,
+				AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
