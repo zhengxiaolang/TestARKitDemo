@@ -11,6 +11,9 @@
 		AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */; };
 		AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */; };
 		AA2D2B8C261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B8B261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m */; };
+		AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D58261D464800C2CD63 /* MTARKitHelper.m */; };
+		AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */; };
+		AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */; };
 		AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A995D261C02840019DF27 /* AppDelegate.m */; };
 		AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9960261C02840019DF27 /* SceneDelegate.m */; };
 		AA7A9964261C02840019DF27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9963261C02840019DF27 /* ViewController.m */; };
@@ -33,6 +36,12 @@
 		AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAdd3DModelVC.m; sourceTree = "<group>"; };
 		AA2D2B8A261C4A2100BEBBA5 /* MTFlyAroundCameraVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFlyAroundCameraVC.h; sourceTree = "<group>"; };
 		AA2D2B8B261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFlyAroundCameraVC.m; sourceTree = "<group>"; };
+		AA4D6D57261D464800C2CD63 /* MTARKitHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARKitHelper.h; sourceTree = "<group>"; };
+		AA4D6D58261D464800C2CD63 /* MTARKitHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTARKitHelper.m; sourceTree = "<group>"; };
+		AA4D6D5C261D4C7D00C2CD63 /* MTFaceDetectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFaceDetectionVC.h; sourceTree = "<group>"; };
+		AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceDetectionVC.m; sourceTree = "<group>"; };
+		AA4D6D64261D4D0A00C2CD63 /* MTFacialExpresstionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFacialExpresstionVC.h; sourceTree = "<group>"; };
+		AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFacialExpresstionVC.m; sourceTree = "<group>"; };
 		AA7A9959261C02840019DF27 /* TestARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A995C261C02840019DF27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7A995D261C02840019DF27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -68,31 +77,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AA4D6D4B261D404400C2CD63 /* vc */ = {
-			isa = PBXGroup;
-			children = (
-				AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */,
-				AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */,
-				AA2D2B86261C437B00BEBBA5 /* MTAdd3DModelVC.h */,
-				AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */,
-				AA2D2B8A261C4A2100BEBBA5 /* MTFlyAroundCameraVC.h */,
-				AA2D2B8B261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m */,
-				AA7A997D261C02EC0019DF27 /* MTBaseVC.h */,
-				AA7A997E261C02EC0019DF27 /* MTBaseVC.m */,
-			);
-			path = vc;
-			sourceTree = "<group>";
-		};
-		AA4D6D4C261D404C00C2CD63 /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
 		AA4D6D4D261D405100C2CD63 /* helper */ = {
 			isa = PBXGroup;
 			children = (
+				AA4D6D57261D464800C2CD63 /* MTARKitHelper.h */,
+				AA4D6D58261D464800C2CD63 /* MTARKitHelper.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -111,6 +100,91 @@
 				AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */,
 			);
 			path = category;
+			sourceTree = "<group>";
+		};
+		AA4D6D60261D4C8700C2CD63 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A997D261C02EC0019DF27 /* MTBaseVC.h */,
+				AA7A997E261C02EC0019DF27 /* MTBaseVC.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		AA4D6D62261D4CB900C2CD63 /* add3DModel */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6D6F261D4E1C00C2CD63 /* view */,
+				AA4D6D6E261D4E1700C2CD63 /* vc */,
+			);
+			path = add3DModel;
+			sourceTree = "<group>";
+		};
+		AA4D6D63261D4CDC00C2CD63 /* faceDetection */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6D6D261D4E0800C2CD63 /* view */,
+				AA4D6D6C261D4E0200C2CD63 /* vc */,
+			);
+			path = faceDetection;
+			sourceTree = "<group>";
+		};
+		AA4D6D69261D4D3500C2CD63 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6D51261D42AA00C2CD63 /* category */,
+				AA4D6D4E261D405700C2CD63 /* router */,
+				AA4D6D60261D4C8700C2CD63 /* base */,
+				AA4D6D4D261D405100C2CD63 /* helper */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		AA4D6D6A261D4DD900C2CD63 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6D63261D4CDC00C2CD63 /* faceDetection */,
+				AA4D6D62261D4CB900C2CD63 /* add3DModel */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		AA4D6D6C261D4E0200C2CD63 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6D5C261D4C7D00C2CD63 /* MTFaceDetectionVC.h */,
+				AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */,
+				AA4D6D64261D4D0A00C2CD63 /* MTFacialExpresstionVC.h */,
+				AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		AA4D6D6D261D4E0800C2CD63 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		AA4D6D6E261D4E1700C2CD63 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */,
+				AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */,
+				AA2D2B86261C437B00BEBBA5 /* MTAdd3DModelVC.h */,
+				AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */,
+				AA2D2B8A261C4A2100BEBBA5 /* MTFlyAroundCameraVC.h */,
+				AA2D2B8B261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		AA4D6D6F261D4E1C00C2CD63 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		AA7A9950261C02840019DF27 = {
@@ -133,11 +207,8 @@
 		AA7A995B261C02840019DF27 /* TestARKitDemo */ = {
 			isa = PBXGroup;
 			children = (
-				AA4D6D51261D42AA00C2CD63 /* category */,
-				AA4D6D4E261D405700C2CD63 /* router */,
-				AA4D6D4D261D405100C2CD63 /* helper */,
-				AA4D6D4C261D404C00C2CD63 /* view */,
-				AA4D6D4B261D404400C2CD63 /* vc */,
+				AA4D6D6A261D4DD900C2CD63 /* module */,
+				AA4D6D69261D4D3500C2CD63 /* common */,
 				AA2D2B72261C377900BEBBA5 /* Models.scnassets */,
 				AA7A995C261C02840019DF27 /* AppDelegate.h */,
 				AA7A995D261C02840019DF27 /* AppDelegate.m */,
@@ -239,10 +310,13 @@
 				AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */,
 				AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */,
 				AA7A996F261C02860019DF27 /* main.m in Sources */,
+				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
 				AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */,
+				AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */,
 				AA2D2B8C261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m in Sources */,
 				AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */,
+				AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
