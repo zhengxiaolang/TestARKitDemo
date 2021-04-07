@@ -14,6 +14,7 @@
 		AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D58261D464800C2CD63 /* MTARKitHelper.m */; };
 		AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */; };
 		AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */; };
+		AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */; };
 		AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A995D261C02840019DF27 /* AppDelegate.m */; };
 		AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9960261C02840019DF27 /* SceneDelegate.m */; };
 		AA7A9964261C02840019DF27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9963261C02840019DF27 /* ViewController.m */; };
@@ -42,6 +43,8 @@
 		AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceDetectionVC.m; sourceTree = "<group>"; };
 		AA4D6D64261D4D0A00C2CD63 /* MTFacialExpresstionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFacialExpresstionVC.h; sourceTree = "<group>"; };
 		AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFacialExpresstionVC.m; sourceTree = "<group>"; };
+		AA4D6D79261D520E00C2CD63 /* MTFaceDetectionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFaceDetectionHelper.h; sourceTree = "<group>"; };
+		AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceDetectionHelper.m; sourceTree = "<group>"; };
 		AA7A9959261C02840019DF27 /* TestARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A995C261C02840019DF27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7A995D261C02840019DF27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 		AA4D6D62261D4CB900C2CD63 /* add3DModel */ = {
 			isa = PBXGroup;
 			children = (
+				AA4D6D78261D51C900C2CD63 /* helper */,
 				AA4D6D6F261D4E1C00C2CD63 /* view */,
 				AA4D6D6E261D4E1700C2CD63 /* vc */,
 			);
@@ -123,6 +127,7 @@
 		AA4D6D63261D4CDC00C2CD63 /* faceDetection */ = {
 			isa = PBXGroup;
 			children = (
+				AA4D6D77261D51C100C2CD63 /* helper */,
 				AA4D6D6D261D4E0800C2CD63 /* view */,
 				AA4D6D6C261D4E0200C2CD63 /* vc */,
 			);
@@ -185,6 +190,22 @@
 			children = (
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		AA4D6D77261D51C100C2CD63 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				AA4D6D79261D520E00C2CD63 /* MTFaceDetectionHelper.h */,
+				AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */,
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		AA4D6D78261D51C900C2CD63 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 		AA7A9950261C02840019DF27 = {
@@ -306,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */,
+				AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */,
 				AA7A9964261C02840019DF27 /* ViewController.m in Sources */,
 				AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */,
 				AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */,
