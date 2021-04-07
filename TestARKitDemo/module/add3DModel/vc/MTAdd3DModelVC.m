@@ -25,12 +25,11 @@
 
 @implementation MTAdd3DModelVC
 
+//    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [self.session runWithConfiguration:self.config];
-    
-//    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -82,7 +81,7 @@
 -(ARWorldTrackingConfiguration *)config{
     if (!_config) {
         _config = [[ARWorldTrackingConfiguration alloc] init];
-        //2.设置追踪方向（追踪平面，后面会用到）
+        //2.设置追踪方向（追踪平面，捕捉平面）
         _config.planeDetection = ARPlaneDetectionHorizontal;
         //3.自适应灯光（相机从暗到强光快速过渡效果会平缓一些）
         _config.lightEstimationEnabled = YES;

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		32E6359E32C2B24E6D67B723 /* libPods-TestARKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */; };
+		AA0D8C96261DB6140055038B /* UIImage+MT.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0D8C95261DB6140055038B /* UIImage+MT.m */; };
 		AA2D2B73261C377900BEBBA5 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2D2B72261C377900BEBBA5 /* Models.scnassets */; };
 		AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */; };
 		AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */; };
@@ -33,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestARKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0D8C94261DB6140055038B /* UIImage+MT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+MT.h"; sourceTree = "<group>"; };
+		AA0D8C95261DB6140055038B /* UIImage+MT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MT.m"; sourceTree = "<group>"; };
 		AA2D2B72261C377900BEBBA5 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCatchTheFlatVC.h; sourceTree = "<group>"; };
 		AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCatchTheFlatVC.m; sourceTree = "<group>"; };
@@ -94,7 +97,6 @@
 				C9F57860B8F9B897A8E4B9DB /* Pods-TestARKitDemo.debug.xcconfig */,
 				EE31F5B42B8A67889144AF1D /* Pods-TestARKitDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -121,6 +123,8 @@
 			children = (
 				AA7A9982261C0F8A0019DF27 /* ARSCNView+MT.h */,
 				AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */,
+				AA0D8C94261DB6140055038B /* UIImage+MT.h */,
+				AA0D8C95261DB6140055038B /* UIImage+MT.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -374,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0D8C96261DB6140055038B /* UIImage+MT.m in Sources */,
 				AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */,
 				AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */,
 				AA7A9964261C02840019DF27 /* ViewController.m in Sources */,

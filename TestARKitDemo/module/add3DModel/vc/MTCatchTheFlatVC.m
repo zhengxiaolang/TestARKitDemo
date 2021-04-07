@@ -7,6 +7,7 @@
 
 #import "MTCatchTheFlatVC.h"
 #import "MTRouter.h"
+#import "UIImage+MT.h"
 
 @interface MTCatchTheFlatVC ()<ARSCNViewDelegate,ARSessionDelegate>
 
@@ -154,7 +155,7 @@
 
 -(void)savePic{
     CVPixelBufferRef capturedImage = self.scnView.session.currentFrame.capturedImage;
-    UIImage *image = [self convert:capturedImage];
+    UIImage *image = [UIImage convert:capturedImage];
     
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
 }
@@ -175,19 +176,6 @@
     }
 }
 
-- (UIImage *)convert:(CVPixelBufferRef)pixelBuffer {
-    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
-
-    CIContext *temporaryContext = [CIContext contextWithOptions:nil];
-    CGImageRef videoImage = [temporaryContext
-        createCGImage:ciImage
-             fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer))];
-
-    UIImage *uiImage = [UIImage imageWithCGImage:videoImage];
-    CGImageRelease(videoImage);
-
-    return uiImage;
-}
 /// 新增3D模型
 -(void)add3DModel{
     //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D花瓶）--------
