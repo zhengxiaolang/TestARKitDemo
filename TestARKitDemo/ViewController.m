@@ -7,11 +7,7 @@
 
 #import "ViewController.h"
 
-#import <SceneKit/SceneKit.h>
-#import <ARKit/ARKit.h>
-
-#import "MTCatchTheFlatVC.h"
-#import "MTAdd3DModelVC.h"
+#import "MTRouter.h"
 
 @interface ViewController ()
 
@@ -42,7 +38,7 @@
 
 -(NSArray *)textArry{
     if (!_textArry) {
-        _textArry = [[NSArray alloc] initWithObjects:@"新增3D模型",@"捕捉平地",@"随着相机旋转", nil];
+        _textArry = [[NSArray alloc] initWithObjects:@"新增3D模型",@"捕捉平地",@"脸部识别", nil];
     }
     return _textArry;
 }
@@ -54,30 +50,19 @@
     
     switch (btn.tag) {
         case 0:
-            [self gotoAdd3DVC];
+            [MTRouter gotoAdd3DVC];
             break;
             
         case 1:
-            [self gotoCatchTheFlatVC];
+            [MTRouter gotoCatchTheFlatVC];
             break;
             
         case 2:
-            
+            [MTRouter gotoFaceDetectionVC];
             break;
         default:
             break;
     }
 }
 
--(void)gotoAdd3DVC{
-    MTAdd3DModelVC *vc = [[MTAdd3DModelVC alloc] init];
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
--(void)gotoCatchTheFlatVC{
-    MTCatchTheFlatVC *vc = [[MTCatchTheFlatVC alloc] init];
-    vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    [self presentViewController:vc animated:YES completion:nil];
-}
 @end

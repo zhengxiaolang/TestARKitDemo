@@ -6,6 +6,7 @@
 //
 
 #import "MTCatchTheFlatVC.h"
+#import "MTRouter.h"
 
 @interface MTCatchTheFlatVC ()<ARSCNViewDelegate,ARSessionDelegate>
 
@@ -85,7 +86,7 @@
 -(ARWorldTrackingConfiguration *)config{
     if (!_config) {
         _config = [[ARWorldTrackingConfiguration alloc] init];
-        //2.设置追踪方向（追踪平面，后面会用到）
+        //2.设置追踪方向（追踪平面，用于平面检测）
         _config.planeDetection = ARPlaneDetectionHorizontal;
         //3.自适应灯光（相机从暗到强光快速过渡效果会平缓一些）
         _config.lightEstimationEnabled = YES;
@@ -118,7 +119,7 @@
         //5.设置节点的位置为捕捉到的平地的锚点的中心位置  SceneKit框架中节点的位置position是一个基于3D坐标系的矢量坐标SCNVector3Make
         planeNode.position =SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z);
         
-        //self.planeNode = planeNode;
+        self.planeNode = planeNode;
         [node addChildNode:planeNode];
         
         
@@ -162,6 +163,16 @@
 {
     
     NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
+    
+    if (!error) {
+        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//        });
+        
+        NSLog(@"保存成功");
+    }else{
+        
+    }
 }
 
 - (UIImage *)convert:(CVPixelBufferRef)pixelBuffer {
@@ -179,9 +190,9 @@
 }
 /// 新增3D模型
 -(void)add3DModel{
-    //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D飞机 或者 花瓶）--------
+    //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D花瓶）--------
         SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
-        //2.获取台灯节点（一个场景会有多个节点，此处我们只写，飞机节点则默认是场景子节点的第一个）
+        //2.获取花瓶节点（一个场景会有多个节点，此处我们只写，飞机节点则默认是场景子节点的第一个）
         //所有的场景有且只有一个根节点，其他所有节点都是根节点的子节点
         
         SCNNode *shipNode = scene.rootNode.childNodes[0];
@@ -189,16 +200,18 @@
         self.planeNode = shipNode;
         
         //台灯比较大，适当缩放一下并且调整位置让其在屏幕中间
-        shipNode.scale = SCNVector3Make(0.5, 0.5, 0.5);
-        shipNode.position = SCNVector3Make(0, -15,-15);
+    
+        SCNVector3 scale = SCNVector3Make(0.5, 0.5, 0.5);
+        SCNVector3 position = SCNVector3Make(0, -15,-15);
+    
+        shipNode.scale = scale;
+        shipNode.position = position;
         ;
         //一个台灯的3D建模不是一气呵成的，可能会有很多个子节点拼接，所以里面的子节点也要一起改，否则上面的修改会无效
         for (SCNNode *node in shipNode.childNodes) {
-            node.scale = SCNVector3Make(0.5, 0.5, 0.5);
-            node.position = SCNVector3Make(0, -15,-15);
-            
+            node.scale = scale;
+            node.position = position;
         }
-        
         
         self.planeNode.position = SCNVector3Make(0, 0, -20);
         
@@ -239,9 +252,12 @@
 {
 //    [self add3DModel];
 }
+
+
 #pragma mark -ARSessionDelegate
 
-//会话位置更新（监听相机的移动），此代理方法会调用非常频繁，只要相机移动就会调用，如果相机移动过快，会有一定的误差，具体的需要强大的算法去优化，这里就不深入了
+//会话位置更新（监听相机的移动），此代理方法会调用非常频繁，只要相机移动就会调用，如果相机移动过快，会有一定的误差
+
 - (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
 {
     NSLog(@"相机移动");

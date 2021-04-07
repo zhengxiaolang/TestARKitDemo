@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32E6359E32C2B24E6D67B723 /* libPods-TestARKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */; };
 		AA2D2B73261C377900BEBBA5 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2D2B72261C377900BEBBA5 /* Models.scnassets */; };
 		AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */; };
 		AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */; };
@@ -27,9 +28,11 @@
 		AA7A997C261C02A10019DF27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7A997B261C02A10019DF27 /* UIKit.framework */; };
 		AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A997E261C02EC0019DF27 /* MTBaseVC.m */; };
 		AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */; };
+		AAA3107C261D822200C9F01D /* MTRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3107B261D822200C9F01D /* MTRouter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestARKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2D2B72261C377900BEBBA5 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCatchTheFlatVC.h; sourceTree = "<group>"; };
 		AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCatchTheFlatVC.m; sourceTree = "<group>"; };
@@ -64,6 +67,10 @@
 		AA7A997E261C02EC0019DF27 /* MTBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTBaseVC.m; sourceTree = "<group>"; };
 		AA7A9982261C0F8A0019DF27 /* ARSCNView+MT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARSCNView+MT.h"; sourceTree = "<group>"; };
 		AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ARSCNView+MT.m"; sourceTree = "<group>"; };
+		AAA3107A261D822200C9F01D /* MTRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTRouter.h; sourceTree = "<group>"; };
+		AAA3107B261D822200C9F01D /* MTRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTRouter.m; sourceTree = "<group>"; };
+		C9F57860B8F9B897A8E4B9DB /* Pods-TestARKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestARKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-TestARKitDemo/Pods-TestARKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		EE31F5B42B8A67889144AF1D /* Pods-TestARKitDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestARKitDemo.release.xcconfig"; path = "Target Support Files/Pods-TestARKitDemo/Pods-TestARKitDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,12 +81,23 @@
 				AA7A997C261C02A10019DF27 /* UIKit.framework in Frameworks */,
 				AA7A997A261C029C0019DF27 /* SceneKit.framework in Frameworks */,
 				AA7A9978261C02960019DF27 /* ARKit.framework in Frameworks */,
+				32E6359E32C2B24E6D67B723 /* libPods-TestARKitDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2174CA5BD88287F4C66B5CA1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9F57860B8F9B897A8E4B9DB /* Pods-TestARKitDemo.debug.xcconfig */,
+				EE31F5B42B8A67889144AF1D /* Pods-TestARKitDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AA4D6D4D261D405100C2CD63 /* helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +110,8 @@
 		AA4D6D4E261D405700C2CD63 /* router */ = {
 			isa = PBXGroup;
 			children = (
+				AAA3107A261D822200C9F01D /* MTRouter.h */,
+				AAA3107B261D822200C9F01D /* MTRouter.m */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -214,6 +234,7 @@
 				AA7A995B261C02840019DF27 /* TestARKitDemo */,
 				AA7A995A261C02840019DF27 /* Products */,
 				AA7A9976261C02960019DF27 /* Frameworks */,
+				2174CA5BD88287F4C66B5CA1 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +273,7 @@
 				AA7A997B261C02A10019DF27 /* UIKit.framework */,
 				AA7A9979261C029C0019DF27 /* SceneKit.framework */,
 				AA7A9977261C02960019DF27 /* ARKit.framework */,
+				36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,6 +285,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA7A9972261C02860019DF27 /* Build configuration list for PBXNativeTarget "TestARKitDemo" */;
 			buildPhases = (
+				226BE4C985C2D50CDC4EE2E7 /* [CP] Check Pods Manifest.lock */,
 				AA7A9955261C02840019DF27 /* Sources */,
 				AA7A9956261C02840019DF27 /* Frameworks */,
 				AA7A9957261C02840019DF27 /* Resources */,
@@ -321,6 +344,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		226BE4C985C2D50CDC4EE2E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TestARKitDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA7A9955261C02840019DF27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -335,6 +383,7 @@
 				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
 				AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */,
+				AAA3107C261D822200C9F01D /* MTRouter.m in Sources */,
 				AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */,
 				AA2D2B8C261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m in Sources */,
 				AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */,
@@ -478,6 +527,7 @@
 		};
 		AA7A9973261C02860019DF27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9F57860B8F9B897A8E4B9DB /* Pods-TestARKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -496,6 +546,7 @@
 		};
 		AA7A9974261C02860019DF27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE31F5B42B8A67889144AF1D /* Pods-TestARKitDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
