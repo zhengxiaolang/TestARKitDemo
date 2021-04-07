@@ -54,6 +54,7 @@
     [self.view addSubview:self.scnView];
     
     [self.view addSubview:self.backBtn];
+    [self.view addSubview:self.saveBtn];
 }
 
 
@@ -150,6 +151,32 @@
 
 #pragma mark - business action
 
+-(void)savePic{
+    CVPixelBufferRef capturedImage = self.scnView.session.currentFrame.capturedImage;
+    UIImage *image = [self convert:capturedImage];
+    
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), (__bridge void *)self);
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+{
+    
+    NSLog(@"image = %@, error = %@, contextInfo = %@", image, error, contextInfo);
+}
+
+- (UIImage *)convert:(CVPixelBufferRef)pixelBuffer {
+    CIImage *ciImage = [CIImage imageWithCVPixelBuffer:pixelBuffer];
+
+    CIContext *temporaryContext = [CIContext contextWithOptions:nil];
+    CGImageRef videoImage = [temporaryContext
+        createCGImage:ciImage
+             fromRect:CGRectMake(0, 0, CVPixelBufferGetWidth(pixelBuffer), CVPixelBufferGetHeight(pixelBuffer))];
+
+    UIImage *uiImage = [UIImage imageWithCGImage:videoImage];
+    CGImageRelease(videoImage);
+
+    return uiImage;
+}
 /// 新增3D模型
 -(void)add3DModel{
     //1.使用场景加载scn文件（scn格式文件是一个基于3D建模的文件，使用3DMax软件可以创建，这里系统有一个默认的3D飞机 或者 花瓶）--------

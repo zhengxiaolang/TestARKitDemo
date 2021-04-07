@@ -60,7 +60,21 @@
     return _backBtn;
 }
 
+-(UIButton *)saveBtn{
+    if (!_saveBtn) {
+        _saveBtn = [[UIButton alloc] init];
+        _saveBtn.frame = CGRectMake(80, 44, 60, 40);
+        [_saveBtn setTitle:@"保存" forState:UIControlStateNormal];
+        [_saveBtn addTarget:self action:@selector(savePic) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _saveBtn;
+}
+
 -(void)gotoBack{
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)savePic{
+    
 }
 @end

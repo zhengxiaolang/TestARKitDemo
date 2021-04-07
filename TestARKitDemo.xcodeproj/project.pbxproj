@@ -68,6 +68,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA4D6D4B261D404400C2CD63 /* vc */ = {
+			isa = PBXGroup;
+			children = (
+				AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */,
+				AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */,
+				AA2D2B86261C437B00BEBBA5 /* MTAdd3DModelVC.h */,
+				AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */,
+				AA2D2B8A261C4A2100BEBBA5 /* MTFlyAroundCameraVC.h */,
+				AA2D2B8B261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m */,
+				AA7A997D261C02EC0019DF27 /* MTBaseVC.h */,
+				AA7A997E261C02EC0019DF27 /* MTBaseVC.m */,
+			);
+			path = vc;
+			sourceTree = "<group>";
+		};
+		AA4D6D4C261D404C00C2CD63 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		AA4D6D4D261D405100C2CD63 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = helper;
+			sourceTree = "<group>";
+		};
+		AA4D6D4E261D405700C2CD63 /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		AA4D6D51261D42AA00C2CD63 /* category */ = {
+			isa = PBXGroup;
+			children = (
+				AA7A9982261C0F8A0019DF27 /* ARSCNView+MT.h */,
+				AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */,
+			);
+			path = category;
+			sourceTree = "<group>";
+		};
 		AA7A9950261C02840019DF27 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +133,11 @@
 		AA7A995B261C02840019DF27 /* TestARKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AA4D6D51261D42AA00C2CD63 /* category */,
+				AA4D6D4E261D405700C2CD63 /* router */,
+				AA4D6D4D261D405100C2CD63 /* helper */,
+				AA4D6D4C261D404C00C2CD63 /* view */,
+				AA4D6D4B261D404400C2CD63 /* vc */,
 				AA2D2B72261C377900BEBBA5 /* Models.scnassets */,
 				AA7A995C261C02840019DF27 /* AppDelegate.h */,
 				AA7A995D261C02840019DF27 /* AppDelegate.m */,
@@ -100,16 +150,6 @@
 				AA7A996A261C02860019DF27 /* LaunchScreen.storyboard */,
 				AA7A996D261C02860019DF27 /* Info.plist */,
 				AA7A996E261C02860019DF27 /* main.m */,
-				AA7A997D261C02EC0019DF27 /* MTBaseVC.h */,
-				AA7A997E261C02EC0019DF27 /* MTBaseVC.m */,
-				AA7A9982261C0F8A0019DF27 /* ARSCNView+MT.h */,
-				AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */,
-				AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */,
-				AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */,
-				AA2D2B86261C437B00BEBBA5 /* MTAdd3DModelVC.h */,
-				AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */,
-				AA2D2B8A261C4A2100BEBBA5 /* MTFlyAroundCameraVC.h */,
-				AA2D2B8B261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m */,
 			);
 			path = TestARKitDemo;
 			sourceTree = "<group>";

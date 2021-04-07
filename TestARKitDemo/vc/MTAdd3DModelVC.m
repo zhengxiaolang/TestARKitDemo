@@ -132,4 +132,19 @@
     [self add3DModel];
 }
 
+-(void)testCapture{
+//    ARSCNView
+//使用拍照的方法，如下
+//    self.scnView.session.currentFrame.capturedImage
+//    func snapShotCamera(){
+//            guard let pixelBuffer = arView.session.currentFrame?.capturedImage else {
+//                return
+//            }
+//            let ciImage = CIImage(cvPixelBuffer: pixelBuffer),
+//            context = CIContext(options: nil),
+//            cgImage = context.createCGImage(ciImage, from: ciImage.extent),
+//            uiImage = UIImage(cgImage: cgImage!, scale: 1, orientation: .right)
+//            UIImageWriteToSavedPhotosAlbum(uiImage, self, #selector(imageSaveHandler(image:didFinishSavingWithError:contextInfo:)), nil)
+//        }
+}
 @end
