@@ -7,6 +7,7 @@
 
 #import "MTFaceDetectionVC.h"
 #import "MTARKitHelper.h"
+#import "MTFaceDetectionHelper.h"
 
 @interface MTFaceDetectionVC ()<ARSCNViewDelegate>
 
@@ -16,13 +17,14 @@
 
 @property(nonatomic,strong)ARFaceTrackingConfiguration *config;
 
-@property(nonatomic,strong)UILabel *typeLabel;
-
-@property(nonatomic,strong)UILabel *reaultLabel;
+@property(nonatomic,strong)UILabel *resultLabel;
 
 @property(nonatomic,assign)MTFaceDetectionType faceDetectionType;
 
 @property(nonatomic,strong)ARWorldTrackingConfiguration *worldConfig;
+
+@property(nonatomic,strong)UIButton *switchBtn;
+
 @end
 
 @implementation MTFaceDetectionVC
@@ -49,7 +51,7 @@
 -(void)initData{
     
     self.scnView.session = self.session;
-    
+    self.resultLabel.text = @"人脸识别";
 }
 
 -(void)createView{
@@ -57,18 +59,36 @@
     
     [self.view addSubview:self.backBtn];
     
-    [self.view addSubview:self.typeLabel];
-    [self.view addSubview:self.reaultLabel];
+    [self.view addSubview:self.resultLabel];
+    
+    [self.view addSubview:self.switchBtn];
 }
 
 
+-(void)layoutSubView{
+    
+    self.resultLabel.frame = CGRectMake(MT_SCREEN_WIDTH - 160, 44, 150, 40);
+}
+
 -(void)actionAfterViewDidLoad{
     
+//    self.faceDetectionType = arc4random()%7;
     
+    self.resultLabel.text = [NSString stringWithFormat:@"识别:%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType]];
 }
 
 #pragma mark - lazy loading
 
+-(UILabel *)resultLabel{
+    if (!_resultLabel) {
+        UILabel *label = [[UILabel alloc] init];
+        label.textColor = [UIColor redColor];
+        label.backgroundColor = [UIColor clearColor];
+        label.textAlignment = NSTextAlignmentRight;
+        _resultLabel = label;
+    }
+    return _resultLabel;
+}
 -(ARSCNView *)scnView{
     if (!_scnView) {
         _scnView = [MTARKitHelper createSCNView];
@@ -103,14 +123,68 @@
     }
     return _worldConfig;
 }
+
+-(UIButton *)switchBtn{
+    if (!_switchBtn) {
+        _switchBtn = [[UIButton alloc] init];
+        _switchBtn.frame = CGRectMake(100, 44, 100, 40);
+        [_switchBtn setTitle:@"切换部位" forState:UIControlStateNormal];
+        [_switchBtn addTarget:self action:@selector(switchLocation) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _switchBtn;
+}
+
 #pragma mark - ARSCNViewDelegate
 - (void)renderer:(id<SCNSceneRenderer>)renderer didUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor {
     
-//    if (!anchor || ![anchor isKindOfClass:[ARFaceAnchor class]]) return;
-//
-//    ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
+    if (!anchor || ![anchor isKindOfClass:[ARFaceAnchor class]]) return;
+
+    ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
     
+    BOOL isDetected = NO;
     
+    switch (self.faceDetectionType) {
+        case MTFaceDetectionTypeOpenMouth:
+            isDetected = [MTFaceDetectionHelper isOpenMouthWithFaceAnchor:faceAnchor];
+            break;
+            
+        case MTFaceDetectionTypeBlinkEyes:
+            isDetected = [MTFaceDetectionHelper isBlinkEyesWithFaceAnchor:faceAnchor];
+            break;
+            
+        case MTFaceDetectionTypeTurnLeft:
+            isDetected = [MTFaceDetectionHelper isTurnLeftWithFaceAnchor:faceAnchor];
+            break;
+            
+        case MTFaceDetectionTypeTurnRight:
+            isDetected = [MTFaceDetectionHelper isTurnRightWithFaceAnchor:faceAnchor];
+            break;
+        case MTFaceDetectionTypeRiseHead:
+            isDetected = [MTFaceDetectionHelper isRiseHeadWithFaceAnchor:faceAnchor];
+            break;
+        case MTFaceDetectionTypeBowHead:
+            isDetected = [MTFaceDetectionHelper isBowHeadWithFaceAnchor:faceAnchor];
+            
+            break;
+        case MTFaceDetectionTypeFrownBled:
+            isDetected = [MTFaceDetectionHelper isFrownBledWithFaceAnchor:faceAnchor];
+            
+            break;
+        default:
+            break;
+    }
     
+    NSString *result = isDetected?@"成功":@"失败";
+    UIColor *textColor = isDetected?[UIColor greenColor]:[UIColor redColor];
+    self.resultLabel.text = [NSString stringWithFormat:@"%@%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType],result];
+    
+    self.resultLabel.textColor = textColor;
+}
+
+-(void)switchLocation{
+    
+    self.faceDetectionType = arc4random()%7;
+    
+    self.resultLabel.text = [NSString stringWithFormat:@"识别:%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType]];
 }
 @end

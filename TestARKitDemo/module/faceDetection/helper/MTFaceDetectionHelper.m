@@ -67,7 +67,7 @@
 }
 
 //向右转头
-+(BOOL)isurnRightWithFaceAnchor:(ARAnchor *)anchor{
++(BOOL)isTurnRightWithFaceAnchor:(ARAnchor *)anchor{
     
     ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
     
@@ -135,4 +135,40 @@
 //CGFloat leftSmile = [blendShips[ARBlendShapeLocationMouthSmileLeft] floatValue];
 //CGFloat rightSmile = [blendShips[ARBlendShapeLocationMouthSmileRight] floatValue];
 
++(NSString *)getLocatonNameWithTypeWithType:(MTFaceDetectionType)faceDetectionType {
+    
+    switch (faceDetectionType) {
+        case MTFaceDetectionTypeOpenMouth:
+            return @"张嘴";
+            break;
+            
+        case MTFaceDetectionTypeBlinkEyes:
+            return @"眨眼";
+            break;
+            
+        case MTFaceDetectionTypeTurnLeft:
+            return @"头向左转";
+            break;
+            
+        case MTFaceDetectionTypeTurnRight:
+            return @"头向右转";
+            break;
+            
+        case MTFaceDetectionTypeRiseHead:
+            return @"抬头";
+            break;
+            
+        case MTFaceDetectionTypeBowHead:
+            return @"低头";
+            break;
+            
+        case MTFaceDetectionTypeFrownBled:
+            return @"挤眉毛";
+            break;
+            
+        default:
+            return @"未知";
+            break;
+    }
+}
 @end

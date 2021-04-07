@@ -12,6 +12,10 @@
 
 #import "MTARKitHelper.h"
 
+
+#define MT_SCREEN_WIDTH   [UIScreen mainScreen].bounds.size.width
+#define MT_SCREENH_HEIGHT [UIScreen mainScreen].bounds.size.height
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MTBaseVC : UIViewController
