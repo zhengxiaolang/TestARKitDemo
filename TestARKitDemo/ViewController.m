@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 -(void)createView{
@@ -65,4 +67,8 @@
     }
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle{
+
+    return UIStatusBarStyleDefault;
+}
 @end

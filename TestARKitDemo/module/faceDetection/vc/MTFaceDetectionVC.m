@@ -186,7 +186,7 @@
     }
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSString *result = isDetected?@"成功":@"失败";
+        NSString *result = isDetected?@"成功":@"检测中";
         UIColor *textColor = isDetected?[UIColor greenColor]:[UIColor redColor];
         self.resultLabel.text = [NSString stringWithFormat:@"%@%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType],result];
         
@@ -207,6 +207,8 @@
 }
 
 -(void)reset{
-    [self.session runWithConfiguration:self.config];
+    
+//    [self.session runWithConfiguration:self.config];
+    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
 }
 @end

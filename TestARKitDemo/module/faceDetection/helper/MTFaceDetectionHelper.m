@@ -58,41 +58,67 @@
     
     CGFloat cheekPuff = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationCheekPuff];
     
-    CGFloat defaultValue = 0.3;
-    if (cheekPuff > defaultValue) {
-        NSLog(@"检测到脸颊向外");
+    CGFloat jawLeft = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationJawLeft];
+    
+//    NSLog(@"脸颊向外:%lf",cheekPuff);
+    NSLog(@"下颌向左运动:%lf",jawLeft);
+    CGFloat cheekPuffDefaultValue = 0.02;
+    CGFloat jawRightDefaultValue = 0.04;
+    if (cheekPuff > cheekPuffDefaultValue &&
+        jawLeft > jawRightDefaultValue) {
+        NSLog(@"检测到脸颊向左");
         return YES;
     }
     return NO;
 }
 
-//向右转头
+//向右转头 脸颊向外 + 下颌向右运动
 +(BOOL)isTurnRightWithFaceAnchor:(ARAnchor *)anchor{
     
     ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
     
     CGFloat cheekPuff = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationCheekPuff];
     
-    CGFloat defaultValue = 0.3;
-    if (cheekPuff > defaultValue) {
-        NSLog(@"检测到脸颊向外");
+    CGFloat jawRight = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationJawRight];
+    
+//    NSLog(@"脸颊向外:%lf",cheekPuff);
+    NSLog(@"下颌向右运动:%lf",jawRight);
+    CGFloat cheekPuffDefaultValue = 0.02;
+    CGFloat jawRightDefaultValue = 0.04;
+    if (cheekPuff > cheekPuffDefaultValue &&
+        jawRight > jawRightDefaultValue) {
+        NSLog(@"检测到脸颊向右");
         return YES;
     }
     return NO;
 }
 
-//抬头 上嘴唇向上
+//抬头 下颌向前运动 + 鼻孔抬高 +
 +(BOOL)isRiseHeadWithFaceAnchor:(ARAnchor *)anchor{
     
     ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
     
     CGFloat value = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationMouthShrugUpper];
     
-    CGFloat defaultValue = 0.3;
-    if (value > defaultValue) {
+    //左鼻孔
+    CGFloat noseSneerLeft = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationNoseSneerLeft];
+    //右鼻孔
+    CGFloat noseSneerRight = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationNoseSneerRight];
+    //下颌向前运动
+    CGFloat jawForward = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationJawForward];
+    
+    NSLog(@"下颌向外运动：%lf,左鼻孔：%lf,右鼻孔：%lf",jawForward,noseSneerLeft,noseSneerRight);
+    
+    CGFloat jawForwardDefault = 0.065;
+    
+    if (0.065 >jawForward > 0.045
+        && noseSneerLeft > 0.14
+        && noseSneerRight > 0.14) {
+        
         NSLog(@"检测到抬头");
         return YES;
     }
+    
     return NO;
 }
 
@@ -100,11 +126,22 @@
 +(BOOL)isBowHeadWithFaceAnchor:(ARAnchor *)anchor{
     
     ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
+    //左鼻孔
+    CGFloat noseSneerLeft = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationNoseSneerLeft];
+    //右鼻孔
+    CGFloat noseSneerRight = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationNoseSneerRight];
+    //下颌向前运动
+    CGFloat jawForward = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationJawForward];
     
-    CGFloat value = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationMouthShrugLower];
+    CGFloat eyeLookDownLeft = [self getFaceDetectionValueFromFaceAnchor:faceAnchor forShapeLocationKey:ARBlendShapeLocationEyeLookDownLeft];
+    NSLog(@"下颌向外运动：%lf,左鼻孔：%lf,右鼻孔：%lf,眼睛向下看：%lf",jawForward,noseSneerLeft,noseSneerRight,eyeLookDownLeft);
     
-    CGFloat defaultValue = 0.3;
-    if (value > defaultValue) {
+    
+    if (0.1 >jawForward > 0.07
+        && noseSneerLeft < 0.07
+        && noseSneerRight < 0.07
+        && eyeLookDownLeft < 0.03) {
+        
         NSLog(@"检测到低头");
         return YES;
     }

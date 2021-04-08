@@ -77,4 +77,9 @@
 -(void)savePic{
     
 }
+
+- (UIStatusBarStyle)preferredStatusBarStyle{
+
+    return UIStatusBarStyleDefault;
+}
 @end
