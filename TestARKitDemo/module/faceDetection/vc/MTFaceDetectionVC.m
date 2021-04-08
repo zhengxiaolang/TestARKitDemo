@@ -25,15 +25,16 @@
 
 @property(nonatomic,strong)UIButton *switchBtn;
 
+@property(nonatomic,strong)UIButton *restBtn;
 @end
 
 @implementation MTFaceDetectionVC
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self.session runWithConfiguration:self.config];
+    [self.session runWithConfiguration:self.config];
     
-    [self.session runWithConfiguration:self.worldConfig];
+//    [self.session runWithConfiguration:self.worldConfig];
 //    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
 }
 
@@ -62,6 +63,7 @@
     [self.view addSubview:self.resultLabel];
     
     [self.view addSubview:self.switchBtn];
+    [self.view addSubview:self.restBtn];
 }
 
 
@@ -134,6 +136,15 @@
     return _switchBtn;
 }
 
+-(UIButton *)restBtn{
+    if (!_restBtn) {
+        _restBtn = [[UIButton alloc] init];
+        _restBtn.frame = CGRectMake(200, 44, 60, 40);
+        [_restBtn setTitle:@"reset" forState:UIControlStateNormal];
+        [_restBtn addTarget:self action:@selector(reset) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _restBtn;
+}
 #pragma mark - ARSCNViewDelegate
 - (void)renderer:(id<SCNSceneRenderer>)renderer didUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor {
     
@@ -174,11 +185,18 @@
             break;
     }
     
-    NSString *result = isDetected?@"成功":@"失败";
-    UIColor *textColor = isDetected?[UIColor greenColor]:[UIColor redColor];
-    self.resultLabel.text = [NSString stringWithFormat:@"%@%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType],result];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSString *result = isDetected?@"成功":@"失败";
+        UIColor *textColor = isDetected?[UIColor greenColor]:[UIColor redColor];
+        self.resultLabel.text = [NSString stringWithFormat:@"%@%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType],result];
+        
+        self.resultLabel.textColor = textColor;
+        
+    });
     
-    self.resultLabel.textColor = textColor;
+    if (isDetected) {
+        [self.session pause];
+    }
 }
 
 -(void)switchLocation{
@@ -186,5 +204,9 @@
     self.faceDetectionType = arc4random()%7;
     
     self.resultLabel.text = [NSString stringWithFormat:@"识别:%@",[MTFaceDetectionHelper getLocatonNameWithTypeWithType:self.faceDetectionType]];
+}
+
+-(void)reset{
+    [self.session runWithConfiguration:self.config];
 }
 @end

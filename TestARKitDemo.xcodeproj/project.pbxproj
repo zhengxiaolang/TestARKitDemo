@@ -537,13 +537,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7VC42H2B8E;
+				DEVELOPMENT_TEAM = 5TPB3QL27P;
 				INFOPLIST_FILE = TestARKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -556,13 +556,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7VC42H2B8E;
+				DEVELOPMENT_TEAM = 5TPB3QL27P;
 				INFOPLIST_FILE = TestARKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
