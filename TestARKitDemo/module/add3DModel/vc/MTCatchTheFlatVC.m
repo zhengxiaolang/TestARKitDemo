@@ -8,6 +8,7 @@
 #import "MTCatchTheFlatVC.h"
 #import "MTRouter.h"
 #import "UIImage+MT.h"
+#import "MTARKGestureHelper.h"
 
 @interface MTCatchTheFlatVC ()<ARSCNViewDelegate,ARSessionDelegate>
 
@@ -17,11 +18,9 @@
 
 @property(nonatomic,strong)ARWorldTrackingConfiguration *config;
 
-@property(nonatomic,assign)SCNVector3 *startVec;
+@property (nonatomic, strong)NSMutableArray<SCNNode *> *sceneNodes;
 
-@property(nonatomic,assign)SCNVector3 *endVec;
-
-@property(nonatomic,strong)SCNNode *planeNode;
+@property(nonatomic,strong)MTARKGestureHelper *gestureHelper;
 
 @end
 
@@ -62,10 +61,27 @@
 
 -(void)actionAfterViewDidLoad{
     
-    
+    [self.gestureHelper addGesture];
 }
 
 #pragma mark - lazy loading
+
+-(NSMutableArray<SCNNode *> *)sceneNodes{
+    if (!_sceneNodes) {
+        _sceneNodes = [[NSMutableArray<SCNNode *> alloc] init];
+        
+    }
+    return _sceneNodes;
+}
+
+-(MTARKGestureHelper *)gestureHelper{
+    if (!_gestureHelper) {
+        _gestureHelper = [[MTARKGestureHelper alloc] init];
+        _gestureHelper.sceneView = self.scnView;
+        _gestureHelper.sceneNodes = self.sceneNodes;
+    }
+    return _gestureHelper;
+}
 
 -(ARSCNView *)scnView{
     if (!_scnView) {
@@ -87,9 +103,7 @@
 -(ARWorldTrackingConfiguration *)config{
     if (!_config) {
         _config = [[ARWorldTrackingConfiguration alloc] init];
-        //2.设置追踪方向（追踪平面，用于平面检测）
         _config.planeDetection = ARPlaneDetectionHorizontal;
-        //3.自适应灯光（相机从暗到强光快速过渡效果会平缓一些）
         _config.lightEstimationEnabled = YES;
     }
     return _config;
@@ -119,8 +133,6 @@
         SCNNode *planeNode = [SCNNode nodeWithGeometry:plane];
         //5.设置节点的位置为捕捉到的平地的锚点的中心位置  SceneKit框架中节点的位置position是一个基于3D坐标系的矢量坐标SCNVector3Make
         planeNode.position =SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z);
-        
-        self.planeNode = planeNode;
         [node addChildNode:planeNode];
         
         
@@ -185,7 +197,7 @@
         
         SCNNode *shipNode = scene.rootNode.childNodes[0];
         
-        self.planeNode = shipNode;
+//        self.planeNode = shipNode;
         
         //台灯比较大，适当缩放一下并且调整位置让其在屏幕中间
     
@@ -201,7 +213,7 @@
             node.position = position;
         }
         
-        self.planeNode.position = SCNVector3Make(0, 0, -20);
+//        self.planeNode.position = SCNVector3Make(0, 0, -20);
         
         //3.绕相机旋转
         //绕相机旋转的关键点在于：在相机的位置创建一个空节点，然后将台灯添加到这个空节点，最后让这个空节点自身旋转，就可以实现台灯围绕相机旋转
@@ -217,7 +229,7 @@
         
         
         // !!!将台灯节点作为空节点的子节点，如果不这样，那么你将看到的是台灯自己在转，而不是围着你转
-        [node1 addChildNode:self.planeNode];
+//        [node1 addChildNode:self.planeNode];
         
         
         //旋转核心动画

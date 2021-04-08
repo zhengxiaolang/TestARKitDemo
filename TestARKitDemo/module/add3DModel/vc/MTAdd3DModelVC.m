@@ -15,21 +15,14 @@
 
 @property(nonatomic,strong)ARWorldTrackingConfiguration *config;
 
-@property(nonatomic,assign)SCNVector3 *startVec;
-
-@property(nonatomic,assign)SCNVector3 *endVec;
-
-@property(nonatomic,strong)SCNNode *planeNode;
-
 @end
 
 @implementation MTAdd3DModelVC
 
-//    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
-
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [self.session runWithConfiguration:self.config];
+//    [self.session runWithConfiguration:self.config];
+    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -46,6 +39,8 @@
     
     self.scnView.session = self.session;
     
+    self.gestureHelper.sceneView = self.scnView;
+    self.gestureHelper.sceneNodes = self.sceneNodes;
 }
 
 -(void)createView{
@@ -56,14 +51,22 @@
 
 -(void)actionAfterViewDidLoad{
     
-    
+    [self.gestureHelper addGesture];
 }
 
 #pragma mark - lazy loading
 
+-(MTARKGestureHelper *)gestureHelper{
+    if (!_gestureHelper) {
+        _gestureHelper = [[MTARKGestureHelper alloc] init];
+    }
+    return _gestureHelper;
+}
+
 -(ARSCNView *)scnView{
     if (!_scnView) {
         _scnView = [[ARSCNView alloc] initWithFrame:self.view.bounds];
+        _scnView.scene = [SCNScene new];
         _scnView.delegate = self;
     }
     
@@ -112,38 +115,21 @@
 
 /// 新增3D模型
 -(void)add3DModel{
-    SCNScene *scene = scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
+    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
+    SCNNode *node = scene.rootNode.childNodes[0];
     
-    //2.获取花瓶节点（一个场景会有多个节点，此处我们只写，花瓶节点则默认是场景子节点的第一个）
-    //所有的场景有且只有一个根节点，其他所有节点都是根节点的子节点
-    SCNNode *shipNode = scene.rootNode.childNodes[0];
-    
-    //椅子比较大，可以可以调整Z轴的位置让它离摄像头远一点，，然后再往下一点（椅子太高我们坐不上去）就可以看得全局一点
-    shipNode.position = SCNVector3Make(0, -1, -1);//x/y/z/坐标相对于世界原点，也就是相机位置
+    //如果模型比较大，可以可以调整Z轴的位置让它离摄像头远一点
+//    shipNode.position = SCNVector3Make(0, -1, -1);//x/y/z/坐标相对于世界原点，也就是相机位置
     
     //3.将花瓶节点添加到当前屏幕中
-    [self.scnView.scene.rootNode addChildNode:shipNode];
+    [self.scnView.scene.rootNode addChildNode:node];
 }
 
-///点击屏幕 新增模型
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [self add3DModel];
-}
+/////点击屏幕 新增模型
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+//{
+//    [self add3DModel];
+//}
 
--(void)testCapture{
-//    ARSCNView
-//使用拍照的方法，如下
-//    self.scnView.session.currentFrame.capturedImage
-//    func snapShotCamera(){
-//            guard let pixelBuffer = arView.session.currentFrame?.capturedImage else {
-//                return
-//            }
-//            let ciImage = CIImage(cvPixelBuffer: pixelBuffer),
-//            context = CIContext(options: nil),
-//            cgImage = context.createCGImage(ciImage, from: ciImage.extent),
-//            uiImage = UIImage(cgImage: cgImage!, scale: 1, orientation: .right)
-//            UIImageWriteToSavedPhotosAlbum(uiImage, self, #selector(imageSaveHandler(image:didFinishSavingWithError:contextInfo:)), nil)
-//        }
-}
+
 @end

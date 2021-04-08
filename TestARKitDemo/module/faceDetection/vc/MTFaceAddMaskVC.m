@@ -110,8 +110,13 @@
         id<MTLDevice> device = self.scnView.device;
         ARSCNFaceGeometry *geometry = [ARSCNFaceGeometry faceGeometryWithDevice:device fillMesh:NO];
         SCNMaterial *material = geometry.firstMaterial;
-        material.fillMode = SCNFillModeLines;
+        material.fillMode = SCNFillModeFill;
+//        material.fillMode = SCNFillModeLines;
         material.diffuse.contents = [UIImage imageNamed:@"face_green"];
+        
+//        material.lightingModelName = SCNLightingModelPhong;
+//        material.lightingModelName = SCNLightingModelBlinn;
+        
         _faceNode = [SCNNode nodeWithGeometry:geometry];
 //        _faceNode.name = @"textureMask";
     }
@@ -123,8 +128,10 @@
     
     if (!anchor || ![anchor isKindOfClass:[ARFaceAnchor class]]) return;
     ARFaceAnchor *faceAnchor = (ARFaceAnchor *)anchor;
-
+//    ARBodyAnchor ARCamera
     [node addChildNode:self.faceNode];
+    
+//    faceAnchor.rightEyeTransform;
 
     ARSCNFaceGeometry *faceGeometry = (ARSCNFaceGeometry *)self.faceNode.geometry;
     if (faceGeometry && [faceGeometry isKindOfClass:[ARSCNFaceGeometry class]]) {

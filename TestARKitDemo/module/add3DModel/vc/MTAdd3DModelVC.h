@@ -6,10 +6,15 @@
 //
 
 #import "MTBaseVC.h"
+#import "MTARKGestureHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MTAdd3DModelVC : MTBaseVC
+
+@property (nonatomic, strong)NSMutableArray<SCNNode *> *sceneNodes;
+
+@property(nonatomic,strong)MTARKGestureHelper *gestureHelper;
 
 @end
 
