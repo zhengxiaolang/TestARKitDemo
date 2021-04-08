@@ -29,6 +29,7 @@
 		AA7A997C261C02A10019DF27 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7A997B261C02A10019DF27 /* UIKit.framework */; };
 		AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A997E261C02EC0019DF27 /* MTBaseVC.m */; };
 		AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */; };
+		AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */; };
 		AAA3107C261D822200C9F01D /* MTRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3107B261D822200C9F01D /* MTRouter.m */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,8 @@
 		AA7A997E261C02EC0019DF27 /* MTBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTBaseVC.m; sourceTree = "<group>"; };
 		AA7A9982261C0F8A0019DF27 /* ARSCNView+MT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARSCNView+MT.h"; sourceTree = "<group>"; };
 		AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ARSCNView+MT.m"; sourceTree = "<group>"; };
+		AA7B9A33261ED579007FFC87 /* MTFaceAddMaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFaceAddMaskVC.h; sourceTree = "<group>"; };
+		AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceAddMaskVC.m; sourceTree = "<group>"; };
 		AAA3107A261D822200C9F01D /* MTRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTRouter.h; sourceTree = "<group>"; };
 		AAA3107B261D822200C9F01D /* MTRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTRouter.m; sourceTree = "<group>"; };
 		C9F57860B8F9B897A8E4B9DB /* Pods-TestARKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestARKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-TestARKitDemo/Pods-TestARKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */,
 				AA4D6D64261D4D0A00C2CD63 /* MTFacialExpresstionVC.h */,
 				AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */,
+				AA7B9A33261ED579007FFC87 /* MTFaceAddMaskVC.h */,
+				AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
 				AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */,
+				AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */,
 				AAA3107C261D822200C9F01D /* MTRouter.m in Sources */,
 				AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */,
 				AA2D2B8C261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m in Sources */,

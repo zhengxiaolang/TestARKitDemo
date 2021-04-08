@@ -13,30 +13,33 @@
 #import "MTAdd3DModelVC.h"
 #import "MTCatchTheFlatVC.h"
 #import "MTFaceDetectionVC.h"
+#import "MTFaceAddMaskVC.h"
 
 @implementation MTRouter
 
 +(void)gotoAdd3DVC{
     MTAdd3DModelVC *vc = [[MTAdd3DModelVC alloc] init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    UIWindow *window = [MTRouter getRootWindow];
-    [window.rootViewController presentViewController:vc animated:YES completion:nil];
+    [[MTRouter getRootVC] presentViewController:vc animated:YES completion:nil];
 }
 
 +(void)gotoCatchTheFlatVC{
     MTCatchTheFlatVC *vc = [[MTCatchTheFlatVC alloc] init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    UIWindow *window = [MTRouter getRootWindow];
-    [window.rootViewController presentViewController:vc animated:YES completion:nil];
+    [[MTRouter getRootVC] presentViewController:vc animated:YES completion:nil];
 }
 
 +(void)gotoFaceDetectionVC{
     MTFaceDetectionVC *vc = [[MTFaceDetectionVC alloc] init];
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
-    UIWindow *window = [MTRouter getRootWindow];
-    [window.rootViewController presentViewController:vc animated:YES completion:nil];
+    [[MTRouter getRootVC] presentViewController:vc animated:YES completion:nil];
 }
 
++(void)gotoFaceAddMaskVC{
+    MTFaceAddMaskVC *vc = [[MTFaceAddMaskVC alloc] init];
+    vc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [[MTRouter getRootVC] presentViewController:vc animated:YES completion:nil];
+}
 
 +(UIWindow *)getRootWindow{
 
@@ -50,4 +53,5 @@
 +(UIViewController *)getRootVC{
     return [self getRootWindow].rootViewController;
 }
+
 @end

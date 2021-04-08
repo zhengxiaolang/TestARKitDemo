@@ -22,6 +22,9 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)gotoFaceDetectionVC;
 
 
+/// 脸部新增面具
++(void)gotoFaceAddMaskVC;
+
 /// 获取root window
 +(UIWindow *)getRootWindow;
 
