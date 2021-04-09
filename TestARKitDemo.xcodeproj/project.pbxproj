@@ -31,6 +31,9 @@
 		AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */; };
 		AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */; };
 		AA7B9A56261F00FD007FFC87 /* MTARKGestureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7B9A55261F00FD007FFC87 /* MTARKGestureHelper.m */; };
+		AA85117726204D6C00C1078A /* RealityKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA85117626204D6C00C1078A /* RealityKit.framework */; };
+		AA85117A26204E5800C1078A /* MTOcclusionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA85117926204E5800C1078A /* MTOcclusionVC.swift */; };
+		AA85117D2620515800C1078A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA85117C2620515800C1078A /* Foundation.framework */; };
 		AA919194261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA919193261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m */; };
 		AA919198261FEB8000BD9111 /* MTARBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA919197261FEB8000BD9111 /* MTARBaseVC.m */; };
 		AA91919C261FF4E500BD9111 /* MTScan3DObjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */; };
@@ -79,6 +82,10 @@
 		AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceAddMaskVC.m; sourceTree = "<group>"; };
 		AA7B9A54261F00FD007FFC87 /* MTARKGestureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARKGestureHelper.h; sourceTree = "<group>"; };
 		AA7B9A55261F00FD007FFC87 /* MTARKGestureHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTARKGestureHelper.m; sourceTree = "<group>"; };
+		AA85117626204D6C00C1078A /* RealityKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealityKit.framework; path = System/Library/Frameworks/RealityKit.framework; sourceTree = SDKROOT; };
+		AA85117826204E5700C1078A /* TestARKitDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestARKitDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		AA85117926204E5800C1078A /* MTOcclusionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTOcclusionVC.swift; sourceTree = "<group>"; };
+		AA85117C2620515800C1078A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AA919192261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTVitualAndRealOcclusionVC.h; sourceTree = "<group>"; };
 		AA919193261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTVitualAndRealOcclusionVC.m; sourceTree = "<group>"; };
 		AA919196261FEB8000BD9111 /* MTARBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARBaseVC.h; sourceTree = "<group>"; };
@@ -96,6 +103,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA85117D2620515800C1078A /* Foundation.framework in Frameworks */,
+				AA85117726204D6C00C1078A /* RealityKit.framework in Frameworks */,
 				AA7A997C261C02A10019DF27 /* UIKit.framework in Frameworks */,
 				AA7A997A261C029C0019DF27 /* SceneKit.framework in Frameworks */,
 				AA7A9978261C02960019DF27 /* ARKit.framework in Frameworks */,
@@ -208,6 +217,8 @@
 				AA919197261FEB8000BD9111 /* MTARBaseVC.m */,
 				AA91919A261FF4E500BD9111 /* MTScan3DObjectVC.h */,
 				AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */,
+				AA85117926204E5800C1078A /* MTOcclusionVC.swift */,
+				AA85117826204E5700C1078A /* TestARKitDemo-Bridging-Header.h */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -299,6 +310,8 @@
 		AA7A9976261C02960019DF27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AA85117C2620515800C1078A /* Foundation.framework */,
+				AA85117626204D6C00C1078A /* RealityKit.framework */,
 				AA7A997B261C02A10019DF27 /* UIKit.framework */,
 				AA7A9979261C029C0019DF27 /* SceneKit.framework */,
 				AA7A9977261C02960019DF27 /* ARKit.framework */,
@@ -338,6 +351,7 @@
 				TargetAttributes = {
 					AA7A9958261C02840019DF27 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -408,6 +422,7 @@
 				AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */,
 				AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */,
 				AA7A9964261C02840019DF27 /* ViewController.m in Sources */,
+				AA85117A26204E5800C1078A /* MTOcclusionVC.swift in Sources */,
 				AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */,
 				AA7B9A56261F00FD007FFC87 /* MTARKGestureHelper.m in Sources */,
 				AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */,
@@ -566,7 +581,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5TPB3QL27P;
 				INFOPLIST_FILE = TestARKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -575,6 +592,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestARKitDemo/module/faceDetection/vc/TestARKitDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -585,7 +605,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5TPB3QL27P;
 				INFOPLIST_FILE = TestARKitDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -594,6 +616,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestARKitDemo/module/faceDetection/vc/TestARKitDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

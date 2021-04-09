@@ -8,6 +8,8 @@
 #import "MTRouter.h"
 #import "AppDelegate.h"
 
+#import <Foundation/Foundation.h>
+
 #import "SceneDelegate.h"
 
 #import "MTAdd3DModelVC.h"
@@ -17,6 +19,8 @@
 
 #import "MTVitualAndRealOcclusionVC.h"
 #import "MTScan3DObjectVC.h"
+
+#import "TestARKitDemo-Swift.h"
 
 @implementation MTRouter
 
@@ -46,8 +50,13 @@
 }
 
 +(void)gotoVitualAndRealOcclusionVC{
-    MTVitualAndRealOcclusionVC *vc = [[MTVitualAndRealOcclusionVC alloc] init];
+//    MTVitualAndRealOcclusionVC *vc = [[MTVitualAndRealOcclusionVC alloc] init];
+    MTOcclusionVC *vc = [[MTOcclusionVC alloc] init];
     [MTRouter presentVC:vc];
+    
+//    Class class = NSClassFromString(@"MTOcclusionVC");
+//    UIViewController *vc = (UIViewController *)[class new];
+//    [MTRouter presentVC:vc];
 }
 
 +(void)presentVC:(UIViewController *)vc{

@@ -28,4 +28,8 @@
 }
 */
 
+-(void)initData{
+    [super initData];
+}
+
 @end
