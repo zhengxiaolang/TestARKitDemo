@@ -21,8 +21,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-//    [self.session runWithConfiguration:self.config];
-    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
+    [self.session runWithConfiguration:self.config];
+//    [self.session runWithConfiguration:self.config options:ARSessionRunOptionResetTracking|ARSessionRunOptionRemoveExistingAnchors];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -52,6 +52,12 @@
 -(void)actionAfterViewDidLoad{
     
     [self.gestureHelper addGesture];
+    
+    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/candle/candle.scn"];
+    SCNNode *cupNode=scene.rootNode.childNodes[0];
+    cupNode.position = SCNVector3Make(0, -0.3,-0.5);
+    cupNode.name=@"cup";
+    [self.scnView.scene.rootNode addChildNode:cupNode];
 }
 
 #pragma mark - lazy loading
@@ -86,7 +92,6 @@
         _config = [[ARWorldTrackingConfiguration alloc] init];
         //2.设置追踪方向（追踪平面，捕捉平面）
         _config.planeDetection = ARPlaneDetectionHorizontal;
-        //3.自适应灯光（相机从暗到强光快速过渡效果会平缓一些）
         _config.lightEstimationEnabled = YES;
     }
     return _config;
@@ -100,7 +105,7 @@
 
 - (void)renderer:(id <SCNSceneRenderer>)renderer didAddNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor{
     
-    
+    NSLog(@"add node");
 }
 
 - (void)renderer:(id <SCNSceneRenderer>)renderer willUpdateNode:(SCNNode *)node forAnchor:(ARAnchor *)anchor{

@@ -90,7 +90,6 @@
 -(ARSession *)session{
     if (!_session) {
         _session = [MTARKitHelper createSession];
-        
     }
     return _session;
 }

@@ -40,7 +40,13 @@
 
 -(NSArray *)textArry{
     if (!_textArry) {
-        _textArry = [[NSArray alloc] initWithObjects:@"新增3D模型",@"捕捉平地",@"脸部识别",@"新增面具", nil];
+        _textArry = [[NSArray alloc] initWithObjects:
+                     @"新增3D模型",
+                     @"捕捉平地",
+                     @"脸部识别",
+                     @"新增面具",
+                     @"3D扫描",
+                     @"虚实遮挡", nil];
     }
     return _textArry;
 }
@@ -65,6 +71,13 @@
             
         case 3:
             [MTRouter gotoFaceAddMaskVC];
+            break;
+            
+        case 4:
+            [MTRouter gotoScan3DVC];
+            break;
+        case 5:
+            [MTRouter gotoVitualAndRealOcclusionVC];
             break;
             
         default:

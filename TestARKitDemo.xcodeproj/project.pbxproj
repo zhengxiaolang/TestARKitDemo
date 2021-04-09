@@ -31,6 +31,9 @@
 		AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */; };
 		AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */; };
 		AA7B9A56261F00FD007FFC87 /* MTARKGestureHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7B9A55261F00FD007FFC87 /* MTARKGestureHelper.m */; };
+		AA919194261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA919193261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m */; };
+		AA919198261FEB8000BD9111 /* MTARBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA919197261FEB8000BD9111 /* MTARBaseVC.m */; };
+		AA91919C261FF4E500BD9111 /* MTScan3DObjectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */; };
 		AAA3107C261D822200C9F01D /* MTRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA3107B261D822200C9F01D /* MTRouter.m */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +79,12 @@
 		AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceAddMaskVC.m; sourceTree = "<group>"; };
 		AA7B9A54261F00FD007FFC87 /* MTARKGestureHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARKGestureHelper.h; sourceTree = "<group>"; };
 		AA7B9A55261F00FD007FFC87 /* MTARKGestureHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTARKGestureHelper.m; sourceTree = "<group>"; };
+		AA919192261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTVitualAndRealOcclusionVC.h; sourceTree = "<group>"; };
+		AA919193261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTVitualAndRealOcclusionVC.m; sourceTree = "<group>"; };
+		AA919196261FEB8000BD9111 /* MTARBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARBaseVC.h; sourceTree = "<group>"; };
+		AA919197261FEB8000BD9111 /* MTARBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTARBaseVC.m; sourceTree = "<group>"; };
+		AA91919A261FF4E500BD9111 /* MTScan3DObjectVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTScan3DObjectVC.h; sourceTree = "<group>"; };
+		AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTScan3DObjectVC.m; sourceTree = "<group>"; };
 		AAA3107A261D822200C9F01D /* MTRouter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTRouter.h; sourceTree = "<group>"; };
 		AAA3107B261D822200C9F01D /* MTRouter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTRouter.m; sourceTree = "<group>"; };
 		C9F57860B8F9B897A8E4B9DB /* Pods-TestARKitDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestARKitDemo.debug.xcconfig"; path = "Target Support Files/Pods-TestARKitDemo/Pods-TestARKitDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,6 +202,12 @@
 				AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */,
 				AA7B9A33261ED579007FFC87 /* MTFaceAddMaskVC.h */,
 				AA7B9A34261ED579007FFC87 /* MTFaceAddMaskVC.m */,
+				AA919192261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.h */,
+				AA919193261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m */,
+				AA919196261FEB8000BD9111 /* MTARBaseVC.h */,
+				AA919197261FEB8000BD9111 /* MTARBaseVC.m */,
+				AA91919A261FF4E500BD9111 /* MTScan3DObjectVC.h */,
+				AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -388,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA919194261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m in Sources */,
 				AA0D8C96261DB6140055038B /* UIImage+MT.m in Sources */,
 				AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */,
 				AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */,
@@ -398,12 +414,14 @@
 				AA7A996F261C02860019DF27 /* main.m in Sources */,
 				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
+				AA919198261FEB8000BD9111 /* MTARBaseVC.m in Sources */,
 				AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */,
 				AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */,
 				AAA3107C261D822200C9F01D /* MTRouter.m in Sources */,
 				AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */,
 				AA2D2B8C261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m in Sources */,
 				AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */,
+				AA91919C261FF4E500BD9111 /* MTScan3DObjectVC.m in Sources */,
 				AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,7 +573,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -574,7 +592,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mt.lidar.test.TestARKitDemo3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

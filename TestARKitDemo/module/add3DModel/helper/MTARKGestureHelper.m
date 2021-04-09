@@ -90,7 +90,7 @@
     
     ARHitTestResult *hitResult = [result firstObject];
     
-    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
+    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/cup/cup.scn"];
 //    SCNScene *scene = self.sceneView.scene;
     //[SCNScene sceneNamed:self.sceneName];
     

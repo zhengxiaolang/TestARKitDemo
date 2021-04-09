@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// <#Description#>
 @interface MTRouter : NSObject
 
 /// 新增3D模型
@@ -25,10 +26,19 @@ NS_ASSUME_NONNULL_BEGIN
 /// 脸部新增面具
 +(void)gotoFaceAddMaskVC;
 
+
+/// 扫描3D模型
++(void)gotoScan3DVC;
+
+/// 虚实遮挡
++(void)gotoVitualAndRealOcclusionVC;
+
 /// 获取root window
 +(UIWindow *)getRootWindow;
 
 +(UIViewController *)getRootVC;
+
++(void)presentVC:(UIViewController *)vc;
 
 @end
 
