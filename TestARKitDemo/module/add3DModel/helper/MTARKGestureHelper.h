@@ -18,9 +18,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,weak)NSMutableArray<SCNNode *> *sceneNodes;
 
-
 /// 新增手势
 - (void)addGesture;
+
+-(void)removeGesture;
+
 @end
 
 NS_ASSUME_NONNULL_END

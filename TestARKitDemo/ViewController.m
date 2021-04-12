@@ -46,7 +46,8 @@
                      @"脸部识别",
                      @"新增面具",
                      @"3D扫描",
-                     @"虚实遮挡", nil];
+                     @"虚实遮挡",
+                     @"封装成一个VC",nil];
     }
     return _textArry;
 }
@@ -78,6 +79,10 @@
             break;
         case 5:
             [MTRouter gotoVitualAndRealOcclusionVC];
+            break;
+        
+        case 6:
+            [MTRouter gotoARAdapterVC];
             break;
             
         default:

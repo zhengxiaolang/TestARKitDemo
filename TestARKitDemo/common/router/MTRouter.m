@@ -22,6 +22,8 @@
 
 #import "TestARKitDemo-Swift.h"
 
+#import "MTARAdapterVC.h"
+
 @implementation MTRouter
 
 +(void)gotoAdd3DVC{
@@ -59,6 +61,11 @@
 //    [MTRouter presentVC:vc];
 }
 
++(void)gotoARAdapterVC{
+    MTARAdapterVC *vc = [[MTARAdapterVC alloc] init];
+    [MTRouter presentVC:vc];
+}
+
 +(void)presentVC:(UIViewController *)vc{
     
     vc.modalPresentationStyle = UIModalPresentationFullScreen;
@@ -67,27 +74,36 @@
 
 +(UIWindow *)getRootWindow{
 
-    NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
-    UIWindowScene *windowScene = (UIWindowScene *)array[0];
-    SceneDelegate *delegate =(SceneDelegate *)windowScene.delegate;
-    
-    return delegate.window;
+//    NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+//    UIWindowScene *windowScene = (UIWindowScene *)array[0];
+//    SceneDelegate *delegate =(SceneDelegate *)windowScene.delegate;
+//
+//    return delegate.window;
     
     if (!@available(iOS 13.0, *)) {
         AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-        
+
         return delegate.window;
     } else {
         NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
         UIWindowScene *windowScene = (UIWindowScene *)array[0];
         SceneDelegate *delegate =(SceneDelegate *)windowScene.delegate;
-        
+
         return delegate.window;
     }
 }
 
 +(UIViewController *)getRootVC{
     return [self getRootWindow].rootViewController;
+}
+
++(UIViewController *)getCurrentVC{
+    UIViewController *vc = [self getRootVC];
+    
+    if (vc.presentedViewController) {
+        return vc.presentedViewController;
+    }
+    return vc;
 }
 
 @end

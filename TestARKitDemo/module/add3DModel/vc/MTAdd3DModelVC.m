@@ -7,6 +7,7 @@
 
 #import "MTAdd3DModelVC.h"
 #import "MTAlertHelper.h"
+#import "MTRouter.h"
 
 @interface MTAdd3DModelVC ()<ARSCNViewDelegate>
 
@@ -123,7 +124,8 @@
     NSLog(@"检测到平面，可以add node");
     
     dispatch_async(dispatch_get_main_queue(), ^{
-        [MTAlertHelper showText:@"检测到平面,点击添加" withDuration:2 inVC:self];
+//        [MTRouter getCurrentVC];
+        [MTAlertHelper showText:@"检测到平面,点击添加" withDuration:2 inVC:[MTRouter getCurrentVC]];
     });
     
 }

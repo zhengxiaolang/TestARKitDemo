@@ -11,6 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol YHARAdapterProtocol <NSObject>
+
+@optional
+
+-(void)startSession;
+
+-(void)pauseSession;
+
+-(void)resetSession;
+
+
+@end
 @interface MTARKitHelper : NSObject
 
 +(ARSCNView *)createSCNView;

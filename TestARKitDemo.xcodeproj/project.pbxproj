@@ -17,7 +17,14 @@
 		AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */; };
 		AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */; };
 		AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */; };
+		AA5C000226241D40009CFAD1 /* ARPlanDetetionAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C000126241D40009CFAD1 /* ARPlanDetetionAdapter.m */; };
+		AA5C000626241D62009CFAD1 /* ARFaceMaskAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C000526241D62009CFAD1 /* ARFaceMaskAdapter.m */; };
+		AA5C000A26241D8C009CFAD1 /* ARFaceDetectionAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C000926241D8C009CFAD1 /* ARFaceDetectionAdapter.m */; };
+		AA5C000E26241DA6009CFAD1 /* AR3DScanAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C000D26241DA6009CFAD1 /* AR3DScanAdapter.m */; };
+		AA5C001226241F46009CFAD1 /* MTARAdapterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */; };
 		AA5CFFE82623F7CE009CFAD1 /* MTAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */; };
+		AA5CFFF9262419F9009CFAD1 /* ARBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFF8262419F9009CFAD1 /* ARBaseAdapter.m */; };
+		AA5CFFFE26241BFC009CFAD1 /* AR3DModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFFD26241BFC009CFAD1 /* AR3DModelAdapter.m */; };
 		AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A995D261C02840019DF27 /* AppDelegate.m */; };
 		AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9960261C02840019DF27 /* SceneDelegate.m */; };
 		AA7A9964261C02840019DF27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9963261C02840019DF27 /* ViewController.m */; };
@@ -60,8 +67,22 @@
 		AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFacialExpresstionVC.m; sourceTree = "<group>"; };
 		AA4D6D79261D520E00C2CD63 /* MTFaceDetectionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFaceDetectionHelper.h; sourceTree = "<group>"; };
 		AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceDetectionHelper.m; sourceTree = "<group>"; };
+		AA5C000026241D40009CFAD1 /* ARPlanDetetionAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARPlanDetetionAdapter.h; sourceTree = "<group>"; };
+		AA5C000126241D40009CFAD1 /* ARPlanDetetionAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARPlanDetetionAdapter.m; sourceTree = "<group>"; };
+		AA5C000426241D62009CFAD1 /* ARFaceMaskAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARFaceMaskAdapter.h; sourceTree = "<group>"; };
+		AA5C000526241D62009CFAD1 /* ARFaceMaskAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARFaceMaskAdapter.m; sourceTree = "<group>"; };
+		AA5C000826241D8C009CFAD1 /* ARFaceDetectionAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARFaceDetectionAdapter.h; sourceTree = "<group>"; };
+		AA5C000926241D8C009CFAD1 /* ARFaceDetectionAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARFaceDetectionAdapter.m; sourceTree = "<group>"; };
+		AA5C000C26241DA6009CFAD1 /* AR3DScanAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AR3DScanAdapter.h; sourceTree = "<group>"; };
+		AA5C000D26241DA6009CFAD1 /* AR3DScanAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AR3DScanAdapter.m; sourceTree = "<group>"; };
+		AA5C001026241F46009CFAD1 /* MTARAdapterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARAdapterVC.h; sourceTree = "<group>"; };
+		AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTARAdapterVC.m; sourceTree = "<group>"; };
 		AA5CFFE62623F7CE009CFAD1 /* MTAlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAlertHelper.h; sourceTree = "<group>"; };
 		AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAlertHelper.m; sourceTree = "<group>"; };
+		AA5CFFF7262419F9009CFAD1 /* ARBaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARBaseAdapter.h; sourceTree = "<group>"; };
+		AA5CFFF8262419F9009CFAD1 /* ARBaseAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARBaseAdapter.m; sourceTree = "<group>"; };
+		AA5CFFFC26241BFC009CFAD1 /* AR3DModelAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AR3DModelAdapter.h; sourceTree = "<group>"; };
+		AA5CFFFD26241BFC009CFAD1 /* AR3DModelAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AR3DModelAdapter.m; sourceTree = "<group>"; };
 		AA7A9959261C02840019DF27 /* TestARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A995C261C02840019DF27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7A995D261C02840019DF27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +222,7 @@
 		AA4D6D6A261D4DD900C2CD63 /* module */ = {
 			isa = PBXGroup;
 			children = (
+				AA5CFFF6262419D8009CFAD1 /* ARAdapter */,
 				AA4D6D63261D4CDC00C2CD63 /* faceDetection */,
 				AA4D6D62261D4CB900C2CD63 /* add3DModel */,
 			);
@@ -224,6 +246,8 @@
 				AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */,
 				AA85117926204E5800C1078A /* MTOcclusionVC.swift */,
 				AA85117826204E5700C1078A /* TestARKitDemo-Bridging-Header.h */,
+				AA5C001026241F46009CFAD1 /* MTARAdapterVC.h */,
+				AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -271,6 +295,25 @@
 				AA7B9A55261F00FD007FFC87 /* MTARKGestureHelper.m */,
 			);
 			path = helper;
+			sourceTree = "<group>";
+		};
+		AA5CFFF6262419D8009CFAD1 /* ARAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				AA5CFFF7262419F9009CFAD1 /* ARBaseAdapter.h */,
+				AA5CFFF8262419F9009CFAD1 /* ARBaseAdapter.m */,
+				AA5CFFFC26241BFC009CFAD1 /* AR3DModelAdapter.h */,
+				AA5CFFFD26241BFC009CFAD1 /* AR3DModelAdapter.m */,
+				AA5C000026241D40009CFAD1 /* ARPlanDetetionAdapter.h */,
+				AA5C000126241D40009CFAD1 /* ARPlanDetetionAdapter.m */,
+				AA5C000426241D62009CFAD1 /* ARFaceMaskAdapter.h */,
+				AA5C000526241D62009CFAD1 /* ARFaceMaskAdapter.m */,
+				AA5C000826241D8C009CFAD1 /* ARFaceDetectionAdapter.h */,
+				AA5C000926241D8C009CFAD1 /* ARFaceDetectionAdapter.m */,
+				AA5C000C26241DA6009CFAD1 /* AR3DScanAdapter.h */,
+				AA5C000D26241DA6009CFAD1 /* AR3DScanAdapter.m */,
+			);
+			path = ARAdapter;
 			sourceTree = "<group>";
 		};
 		AA7A9950261C02840019DF27 = {
@@ -422,17 +465,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA5C000226241D40009CFAD1 /* ARPlanDetetionAdapter.m in Sources */,
+				AA5CFFF9262419F9009CFAD1 /* ARBaseAdapter.m in Sources */,
 				AA919194261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m in Sources */,
 				AA0D8C96261DB6140055038B /* UIImage+MT.m in Sources */,
+				AA5C000E26241DA6009CFAD1 /* AR3DScanAdapter.m in Sources */,
 				AA7A997F261C02EC0019DF27 /* MTBaseVC.m in Sources */,
 				AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */,
 				AA7A9964261C02840019DF27 /* ViewController.m in Sources */,
 				AA85117A26204E5800C1078A /* MTOcclusionVC.swift in Sources */,
 				AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */,
+				AA5C000A26241D8C009CFAD1 /* ARFaceDetectionAdapter.m in Sources */,
 				AA7B9A56261F00FD007FFC87 /* MTARKGestureHelper.m in Sources */,
+				AA5CFFFE26241BFC009CFAD1 /* AR3DModelAdapter.m in Sources */,
+				AA5C000626241D62009CFAD1 /* ARFaceMaskAdapter.m in Sources */,
 				AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */,
 				AA7A996F261C02860019DF27 /* main.m in Sources */,
 				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
+				AA5C001226241F46009CFAD1 /* MTARAdapterVC.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
 				AA919198261FEB8000BD9111 /* MTARBaseVC.m in Sources */,
 				AA5CFFE82623F7CE009CFAD1 /* MTAlertHelper.m in Sources */,

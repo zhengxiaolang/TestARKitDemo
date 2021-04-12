@@ -33,12 +33,18 @@ NS_ASSUME_NONNULL_BEGIN
 /// 虚实遮挡
 +(void)gotoVitualAndRealOcclusionVC;
 
+
+/// 封闭成适配器
++(void)gotoARAdapterVC;
+
 /// 获取root window
 +(UIWindow *)getRootWindow;
 
 +(UIViewController *)getRootVC;
 
 +(void)presentVC:(UIViewController *)vc;
+
++(UIViewController *)getCurrentVC;
 
 @end
 

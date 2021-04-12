@@ -9,11 +9,13 @@
 
 @interface MTARKGestureHelper ()
 
-@property (nonatomic, strong) SCNHitTestResult *removeHitResult;
+@property (nonatomic, strong)SCNHitTestResult *removeHitResult;
 
-@property (nonatomic, strong) ARHitTestResult *hitTestResult;
+@property (nonatomic, strong)ARHitTestResult *hitTestResult;
 
-@property (nonatomic, strong) SCNNode *movedNode;
+@property (nonatomic, strong)SCNNode *movedNode;
+
+@property (nonatomic, strong)NSMutableArray *gestureArray;
 
 @end
 
@@ -37,6 +39,10 @@
     //缩放
     UIPinchGestureRecognizer *pinchGesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(scaleObject:)];
     [self.sceneView addGestureRecognizer:pinchGesture];
+    
+    [self.gestureArray addObject:tapGesture];
+    [self.gestureArray addObject:panGesture];
+    [self.gestureArray addObject:pinchGesture];
 }
 
 #pragma mark - GestureRecognizer
@@ -199,6 +205,22 @@
     }
     if (recognizer.state == UIGestureRecognizerStateEnded) {
         self.movedNode = nil;
+    }
+}
+
+#pragma mark - lazy loading
+
+-(NSMutableArray *)gestureArray{
+    if (!_gestureArray) {
+        _gestureArray = [[NSMutableArray alloc] initWithCapacity:3];
+    }
+    return _gestureArray;
+}
+
+-(void)removeGesture{
+    
+    for (UIGestureRecognizer *gesture in self.gestureArray) {
+        [self.sceneView removeGestureRecognizer:gesture];
     }
 }
 
