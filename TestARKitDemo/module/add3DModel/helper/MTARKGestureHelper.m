@@ -50,7 +50,7 @@
 
 - (void)addObject: (UITapGestureRecognizer *)recognizer {
     
-    [self checkExistingARObjectToInsertOrRemove:recognizer];
+    [self insertOrRemove:recognizer];
 }
 
 -(void)moveObject:(UIPanGestureRecognizer *)recognizer {
@@ -65,7 +65,7 @@
 
 #pragma mark - Check Existing ARObject To Insert Or Remove
 
-- (void)checkExistingARObjectToInsertOrRemove:(UITapGestureRecognizer *) recognizer {
+- (void)insertOrRemove:(UITapGestureRecognizer *) recognizer {
     
     CGPoint holdPoint = [recognizer locationInView:self.sceneView];
     NSArray<SCNHitTestResult *> *result = [self.sceneView hitTest:holdPoint
@@ -73,7 +73,9 @@
     if (result.count == 0) {
         [self insertARObject:recognizer];
     } else {
-
+        //捕捉到已经存在的AR对象，可以进行删除
+        self.removeHitResult = [result firstObject];
+        NSLog(@"可以删除选中的对象");
     }
 }
 
@@ -84,13 +86,18 @@
     CGPoint tapPoint = [recognizer locationInView:self.sceneView];
     NSArray<ARHitTestResult *> *result = [self.sceneView hitTest:tapPoint types:ARHitTestResultTypeExistingPlaneUsingExtent];
     
+//    ARHitTestResultTypeExistingPlaneUsingExtent
+    
+//    ARRaycastQuery *query = [self.sceneView raycastQueryFromPoint:tapPoint allowingTarget:nil alignment:ARRaycastTargetAlignmentAny];
+    
     if (result.count == 0) {
+        NSLog(@"NO OBJ");
         return;
     }
-    
     ARHitTestResult *hitResult = [result firstObject];
     
-    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/cup/cup.scn"];
+//    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/cup/cup.scn"];
+    SCNScene *scene = [SCNScene sceneNamed:@"Models.scnassets/vase/vase.scn"];
 //    SCNScene *scene = self.sceneView.scene;
     //[SCNScene sceneNamed:self.sceneName];
     

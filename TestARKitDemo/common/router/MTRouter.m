@@ -72,6 +72,18 @@
     SceneDelegate *delegate =(SceneDelegate *)windowScene.delegate;
     
     return delegate.window;
+    
+    if (!@available(iOS 13.0, *)) {
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        
+        return delegate.window;
+    } else {
+        NSArray *array =[[[UIApplication sharedApplication] connectedScenes] allObjects];
+        UIWindowScene *windowScene = (UIWindowScene *)array[0];
+        SceneDelegate *delegate =(SceneDelegate *)windowScene.delegate;
+        
+        return delegate.window;
+    }
 }
 
 +(UIViewController *)getRootVC{

@@ -17,6 +17,7 @@
 		AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D5D261D4C7D00C2CD63 /* MTFaceDetectionVC.m */; };
 		AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */; };
 		AA4D6D7B261D520E00C2CD63 /* MTFaceDetectionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */; };
+		AA5CFFE82623F7CE009CFAD1 /* MTAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */; };
 		AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A995D261C02840019DF27 /* AppDelegate.m */; };
 		AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9960261C02840019DF27 /* SceneDelegate.m */; };
 		AA7A9964261C02840019DF27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA7A9963261C02840019DF27 /* ViewController.m */; };
@@ -59,6 +60,8 @@
 		AA4D6D65261D4D0A00C2CD63 /* MTFacialExpresstionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFacialExpresstionVC.m; sourceTree = "<group>"; };
 		AA4D6D79261D520E00C2CD63 /* MTFaceDetectionHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTFaceDetectionHelper.h; sourceTree = "<group>"; };
 		AA4D6D7A261D520E00C2CD63 /* MTFaceDetectionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTFaceDetectionHelper.m; sourceTree = "<group>"; };
+		AA5CFFE62623F7CE009CFAD1 /* MTAlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAlertHelper.h; sourceTree = "<group>"; };
+		AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAlertHelper.m; sourceTree = "<group>"; };
 		AA7A9959261C02840019DF27 /* TestARKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestARKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7A995C261C02840019DF27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AA7A995D261C02840019DF27 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 			children = (
 				AA4D6D57261D464800C2CD63 /* MTARKitHelper.h */,
 				AA4D6D58261D464800C2CD63 /* MTARKitHelper.m */,
+				AA5CFFE62623F7CE009CFAD1 /* MTAlertHelper.h */,
+				AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */,
 			);
 			path = helper;
 			sourceTree = "<group>";
@@ -430,6 +435,7 @@
 				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
 				AA919198261FEB8000BD9111 /* MTARBaseVC.m in Sources */,
+				AA5CFFE82623F7CE009CFAD1 /* MTAlertHelper.m in Sources */,
 				AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */,
 				AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */,
 				AAA3107C261D822200C9F01D /* MTRouter.m in Sources */,
@@ -514,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -567,7 +573,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

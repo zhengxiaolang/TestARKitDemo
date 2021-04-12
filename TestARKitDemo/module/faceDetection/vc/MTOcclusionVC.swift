@@ -9,6 +9,7 @@ import UIKit
 import RealityKit
 
 
+@available(iOS 13.0, *)
 class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 
     var arView:ARView!
@@ -98,8 +99,8 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 //                translation.columns.3.z = -0.2
 //            }
            
-            translation.columns.3.z = -0.3
-            translation.columns.3.y = 0.01
+//            translation.columns.3.z = -0.3
+            translation.columns.3.y = 0.05
            return simd_mul(cameraTransform, translation)
         }
         
