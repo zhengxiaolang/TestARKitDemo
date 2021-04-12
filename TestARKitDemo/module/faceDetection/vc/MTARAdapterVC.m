@@ -11,6 +11,7 @@
 #import "AR3DModelAdapter.h"
 #import "ARPlanDetetionAdapter.h"
 #import "ARFaceMaskAdapter.h"
+#import "ARFaceDetectionAdapter.h"
 
 @interface MTARAdapterVC ()
 
@@ -61,8 +62,9 @@
 -(UIButton *)switchBtn{
     if (!_switchBtn) {
         _switchBtn = [[UIButton alloc] init];
-        _switchBtn.frame = CGRectMake(120, 44, 80, 40);
+        _switchBtn.frame = CGRectMake(60, 44, 80, 40);
         [_switchBtn setTitle:@"切换模式" forState:UIControlStateNormal];
+        [_switchBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [_switchBtn addTarget:self action:@selector(switchMode) forControlEvents:UIControlEventTouchUpInside];
     }
     return _switchBtn;
@@ -113,6 +115,12 @@
         [self initFaceMask];
                                                        }];
     
+    UIAlertAction *faceDetectionAction = [UIAlertAction actionWithTitle:@"面部动作"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+        [self initFaceDetetion];
+                                                       }];
+    
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"
                                                            style:UIAlertActionStyleDefault
                                                          handler:^(UIAlertAction * action) {
@@ -122,6 +130,8 @@
     [alert addAction:planAction];
     
     [alert addAction:faceMaskAction];
+    
+    [alert addAction:faceDetectionAction];
     
     [alert addAction:cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -143,7 +153,7 @@
 }
 
 -(void)initFaceDetetion{
-    self.adapter = [ARFaceMaskAdapter new];
+    self.adapter = [ARFaceDetectionAdapter new];
     [self connetViewAndSession];
 }
 
