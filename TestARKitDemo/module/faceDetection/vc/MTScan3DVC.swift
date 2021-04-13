@@ -94,6 +94,8 @@ class MTScan3DVC: MTARBaseVC , ARSessionDelegate{
 
             return url
         }
+        
+        //通过 ariDrop 或者 第三方软件 进行分享
         func share(url: URL) {
             let vc = UIActivityViewController(activityItems: [url],applicationActivities: nil)
 //            vc.popoverPresentationController?.sourceView = sender

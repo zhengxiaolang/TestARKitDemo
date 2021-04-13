@@ -257,11 +257,11 @@
 				AA919197261FEB8000BD9111 /* MTARBaseVC.m */,
 				AA91919A261FF4E500BD9111 /* MTScan3DObjectVC.h */,
 				AA91919B261FF4E500BD9111 /* MTScan3DObjectVC.m */,
-				AA85117926204E5800C1078A /* MTOcclusionVC.swift */,
 				AA85117826204E5700C1078A /* TestARKitDemo-Bridging-Header.h */,
 				AA5C001026241F46009CFAD1 /* MTARAdapterVC.h */,
 				AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */,
 				AA130DFE26256B7C008714A0 /* MTScan3DVC.swift */,
+				AA85117926204E5800C1078A /* MTOcclusionVC.swift */,
 			);
 			path = vc;
 			sourceTree = "<group>";
