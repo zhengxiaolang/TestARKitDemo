@@ -47,7 +47,7 @@
 }
 
 +(void)gotoScan3DVC{
-    MTScan3DObjectVC *vc = [[MTScan3DObjectVC alloc] init];
+    MTScan3DVC *vc = [[MTScan3DVC alloc] init];
     [MTRouter presentVC:vc];
 }
 

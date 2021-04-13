@@ -9,7 +9,7 @@ import UIKit
 import RealityKit
 
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 
     var arView:ARView!
@@ -23,15 +23,10 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
     override func initData() {
         super.initData()
         
-        if #available(iOS 14.0, *) {
-            initARView()
-            config = initConfig()
-        } else {
-            // Fallback on earlier versions
-        }
+        initView()
+        config = initConfig()
     }
     override func createView() {
-//        super.createView()
         
         view.addSubview(arView)
         view.addSubview(backBtn)
@@ -41,8 +36,7 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
         addGesture()
     }
     
-    @available(iOS 14.0, *)
-    func initARView(){
+    func initView(){
         arView = ARView.init(frame: view.bounds)
         arView.environment.sceneUnderstanding.options = []
         arView.environment.sceneUnderstanding.options.insert(.occlusion)
@@ -52,7 +46,6 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
         arView.session = self.session
     }
     
-    @available(iOS 14.0, *)
     func initConfig() -> ARWorldTrackingConfiguration {
         let config = ARWorldTrackingConfiguration()
         config.sceneReconstruction = .meshWithClassification

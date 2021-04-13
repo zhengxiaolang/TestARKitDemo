@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		32E6359E32C2B24E6D67B723 /* libPods-TestARKitDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */; };
 		AA0D8C96261DB6140055038B /* UIImage+MT.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0D8C95261DB6140055038B /* UIImage+MT.m */; };
+		AA130DFF26256B7C008714A0 /* MTScan3DVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA130DFE26256B7C008714A0 /* MTScan3DVC.swift */; };
+		AA130E06262571E8008714A0 /* MDLMesh+MT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA130E05262571E8008714A0 /* MDLMesh+MT.swift */; };
+		AA130E09262571FF008714A0 /* SCNGeometry+MT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA130E08262571FF008714A0 /* SCNGeometry+MT.swift */; };
+		AA130E0C2625721D008714A0 /* ARMeshGeometry+MT.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA130E0B2625721D008714A0 /* ARMeshGeometry+MT.swift */; };
 		AA2D2B73261C377900BEBBA5 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2D2B72261C377900BEBBA5 /* Models.scnassets */; };
 		AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */; };
 		AA2D2B88261C437B00BEBBA5 /* MTAdd3DModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA2D2B87261C437B00BEBBA5 /* MTAdd3DModelVC.m */; };
@@ -53,6 +57,10 @@
 		36B622E72A73C079D9D97A54 /* libPods-TestARKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestARKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA0D8C94261DB6140055038B /* UIImage+MT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+MT.h"; sourceTree = "<group>"; };
 		AA0D8C95261DB6140055038B /* UIImage+MT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MT.m"; sourceTree = "<group>"; };
+		AA130DFE26256B7C008714A0 /* MTScan3DVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTScan3DVC.swift; sourceTree = "<group>"; };
+		AA130E05262571E8008714A0 /* MDLMesh+MT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MDLMesh+MT.swift"; sourceTree = "<group>"; };
+		AA130E08262571FF008714A0 /* SCNGeometry+MT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNGeometry+MT.swift"; sourceTree = "<group>"; };
+		AA130E0B2625721D008714A0 /* ARMeshGeometry+MT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ARMeshGeometry+MT.swift"; sourceTree = "<group>"; };
 		AA2D2B72261C377900BEBBA5 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
 		AA2D2B82261C431700BEBBA5 /* MTCatchTheFlatVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTCatchTheFlatVC.h; sourceTree = "<group>"; };
 		AA2D2B83261C431700BEBBA5 /* MTCatchTheFlatVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTCatchTheFlatVC.m; sourceTree = "<group>"; };
@@ -177,6 +185,9 @@
 				AA7A9983261C0F8A0019DF27 /* ARSCNView+MT.m */,
 				AA0D8C94261DB6140055038B /* UIImage+MT.h */,
 				AA0D8C95261DB6140055038B /* UIImage+MT.m */,
+				AA130E05262571E8008714A0 /* MDLMesh+MT.swift */,
+				AA130E08262571FF008714A0 /* SCNGeometry+MT.swift */,
+				AA130E0B2625721D008714A0 /* ARMeshGeometry+MT.swift */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -250,6 +261,7 @@
 				AA85117826204E5700C1078A /* TestARKitDemo-Bridging-Header.h */,
 				AA5C001026241F46009CFAD1 /* MTARAdapterVC.h */,
 				AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */,
+				AA130DFE26256B7C008714A0 /* MTScan3DVC.swift */,
 			);
 			path = vc;
 			sourceTree = "<group>";
@@ -469,6 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA5C000226241D40009CFAD1 /* ARPlanDetetionAdapter.m in Sources */,
+				AA130E06262571E8008714A0 /* MDLMesh+MT.swift in Sources */,
 				AA5CFFF9262419F9009CFAD1 /* ARBaseAdapter.m in Sources */,
 				AA919194261FEB5A00BD9111 /* MTVitualAndRealOcclusionVC.m in Sources */,
 				AA0D8C96261DB6140055038B /* UIImage+MT.m in Sources */,
@@ -487,6 +500,7 @@
 				AA7A996F261C02860019DF27 /* main.m in Sources */,
 				AA4D6D59261D464800C2CD63 /* MTARKitHelper.m in Sources */,
 				AA5C001226241F46009CFAD1 /* MTARAdapterVC.m in Sources */,
+				AA130E0C2625721D008714A0 /* ARMeshGeometry+MT.swift in Sources */,
 				AA7A9961261C02840019DF27 /* SceneDelegate.m in Sources */,
 				AA919198261FEB8000BD9111 /* MTARBaseVC.m in Sources */,
 				AA5CFFE82623F7CE009CFAD1 /* MTAlertHelper.m in Sources */,
@@ -494,8 +508,10 @@
 				AA7B9A35261ED579007FFC87 /* MTFaceAddMaskVC.m in Sources */,
 				AAA3107C261D822200C9F01D /* MTRouter.m in Sources */,
 				AA4D6D66261D4D0A00C2CD63 /* MTFacialExpresstionVC.m in Sources */,
+				AA130E09262571FF008714A0 /* SCNGeometry+MT.swift in Sources */,
 				AA2D2B8C261C4A2100BEBBA5 /* MTFlyAroundCameraVC.m in Sources */,
 				AA2D2B84261C431700BEBBA5 /* MTCatchTheFlatVC.m in Sources */,
+				AA130DFF26256B7C008714A0 /* MTScan3DVC.swift in Sources */,
 				AA91919C261FF4E500BD9111 /* MTScan3DObjectVC.m in Sources */,
 				AA4D6D5E261D4C7D00C2CD63 /* MTFaceDetectionVC.m in Sources */,
 			);

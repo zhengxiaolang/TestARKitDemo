@@ -6,8 +6,12 @@
 //
 
 #import "MTScan3DObjectVC.h"
+//#import <RealityKit/RealityKit-Swift.h>
 
+API_AVAILABLE(ios(13.0))
 @interface MTScan3DObjectVC ()<ARSessionDelegate>
+
+//@property(nonatomic,strong)ARView *arView;
 
 @end
 
@@ -25,11 +29,12 @@
     [self setUPSession];
 }
 
+-(void)createView{
+//    [self.view addSubview:self.arView];
+    [self.view addSubview:self.backBtn];
+}
 -(void)actionAfterViewDidLoad{
     
-//    [self.scnView.session createReferenceObjectWithTransform:(simd_float4x4) center:<#(simd_float3)#> extent:<#(simd_float3)#> completionHandler:^(ARReferenceObject * _Nullable referenceObject, NSError * _Nullable error) {
-//        
-//    }];
 }
 #pragma mark - overrie session method
 
@@ -41,16 +46,38 @@
     [self.session pause];
 }
 
+#pragma mark - lazy loading
+
+//-(ARView *)arView API_AVAILABLE(ios(13.0)){
+//    if (!_arView) {
+//        _arView = [[ARView alloc] initWithFrame:self.view.bounds];
+//    }
+//    return _arView;
+//}
 #pragma mark - init Data
 
 -(void)setUpConfig{
-    ARObjectScanningConfiguration *scanConfig = [[ARObjectScanningConfiguration alloc] init];
-    scanConfig.planeDetection = ARPlaneDetectionHorizontal;
+    ARWorldTrackingConfiguration *config = [[ARWorldTrackingConfiguration alloc] init];
+    config.planeDetection = ARPlaneDetectionHorizontal;
+    if (@available(iOS 12.0, *)) {
+        config.environmentTexturing = AREnvironmentTexturingAutomatic;
+        
+    } else {
+        // Fallback on earlier versions
+    }
     
-    self.config = scanConfig;
+    if (@available(iOS 14.0, *)) {
+        config.frameSemantics = ARFrameSemanticSceneDepth;
+    } else {
+        // Fallback on earlier versions
+    }
+    
+    self.config = config;
 }
 
 -(void)setUPSession{
+    
+//    self.arView.session = self.session;
     self.session.delegate = self;
 }
 
