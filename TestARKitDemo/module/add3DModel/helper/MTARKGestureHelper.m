@@ -220,6 +220,7 @@
 -(void)removeGesture{
     
     for (UIGestureRecognizer *gesture in self.gestureArray) {
+        gesture.enabled = NO;
         [self.sceneView removeGestureRecognizer:gesture];
     }
 }

@@ -22,6 +22,7 @@
 		AA5C000A26241D8C009CFAD1 /* ARFaceDetectionAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C000926241D8C009CFAD1 /* ARFaceDetectionAdapter.m */; };
 		AA5C000E26241DA6009CFAD1 /* AR3DScanAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C000D26241DA6009CFAD1 /* AR3DScanAdapter.m */; };
 		AA5C001226241F46009CFAD1 /* MTARAdapterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */; };
+		AA5C001A26243E61009CFAD1 /* MTOcclusionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C001926243E61009CFAD1 /* MTOcclusionAdapter.swift */; };
 		AA5CFFE82623F7CE009CFAD1 /* MTAlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */; };
 		AA5CFFF9262419F9009CFAD1 /* ARBaseAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFF8262419F9009CFAD1 /* ARBaseAdapter.m */; };
 		AA5CFFFE26241BFC009CFAD1 /* AR3DModelAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5CFFFD26241BFC009CFAD1 /* AR3DModelAdapter.m */; };
@@ -77,6 +78,7 @@
 		AA5C000D26241DA6009CFAD1 /* AR3DScanAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AR3DScanAdapter.m; sourceTree = "<group>"; };
 		AA5C001026241F46009CFAD1 /* MTARAdapterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTARAdapterVC.h; sourceTree = "<group>"; };
 		AA5C001126241F46009CFAD1 /* MTARAdapterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTARAdapterVC.m; sourceTree = "<group>"; };
+		AA5C001926243E61009CFAD1 /* MTOcclusionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTOcclusionAdapter.swift; sourceTree = "<group>"; };
 		AA5CFFE62623F7CE009CFAD1 /* MTAlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MTAlertHelper.h; sourceTree = "<group>"; };
 		AA5CFFE72623F7CE009CFAD1 /* MTAlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MTAlertHelper.m; sourceTree = "<group>"; };
 		AA5CFFF7262419F9009CFAD1 /* ARBaseAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARBaseAdapter.h; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				AA5C000926241D8C009CFAD1 /* ARFaceDetectionAdapter.m */,
 				AA5C000C26241DA6009CFAD1 /* AR3DScanAdapter.h */,
 				AA5C000D26241DA6009CFAD1 /* AR3DScanAdapter.m */,
+				AA5C001926243E61009CFAD1 /* MTOcclusionAdapter.swift */,
 			);
 			path = ARAdapter;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				AA7A995E261C02840019DF27 /* AppDelegate.m in Sources */,
 				AA5C000A26241D8C009CFAD1 /* ARFaceDetectionAdapter.m in Sources */,
 				AA7B9A56261F00FD007FFC87 /* MTARKGestureHelper.m in Sources */,
+				AA5C001A26243E61009CFAD1 /* MTOcclusionAdapter.swift in Sources */,
 				AA5CFFFE26241BFC009CFAD1 /* AR3DModelAdapter.m in Sources */,
 				AA5C000626241D62009CFAD1 /* ARFaceMaskAdapter.m in Sources */,
 				AA7A9984261C0F8A0019DF27 /* ARSCNView+MT.m in Sources */,

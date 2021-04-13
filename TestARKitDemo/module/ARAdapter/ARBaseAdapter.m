@@ -45,6 +45,17 @@
 }
 
 -(void)removeChildrenNodes{
-    [self.scnView.scene.rootNode.childNodes makeObjectsPerformSelector:@selector(removeFromParentNode)];
+    
+    NSArray *nodes = self.scnView.scene.rootNode.childNodes;
+    //默认结构有3个child，添加后为
+    for (NSInteger i = 3; i < nodes.count; i++) {
+
+        if (i > 2) {
+            SCNNode *node = nodes[i];
+            [node removeFromParentNode];
+        }
+    }
+    NSLog(@"children 共%ld个:",nodes.count);
+//    [nodes makeObjectsPerformSelector:@selector(removeFromParentNode)];
 }
 @end

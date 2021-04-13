@@ -25,15 +25,16 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
         
         if #available(iOS 14.0, *) {
             initARView()
-            config = buildConfigure()
+            config = initConfig()
         } else {
             // Fallback on earlier versions
         }
     }
     override func createView() {
-        super.createView()
+//        super.createView()
         
         view.addSubview(arView)
+        view.addSubview(backBtn)
     }
     
     override func actionAfterViewDidLoad() {
@@ -41,7 +42,7 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
     }
     
     @available(iOS 14.0, *)
-    func initARView() -> Void {
+    func initARView(){
         arView = ARView.init(frame: view.bounds)
         arView.environment.sceneUnderstanding.options = []
         arView.environment.sceneUnderstanding.options.insert(.occlusion)
@@ -52,16 +53,16 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
     }
     
     @available(iOS 14.0, *)
-    func buildConfigure() -> ARWorldTrackingConfiguration {
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.sceneReconstruction = .meshWithClassification
-        configuration.environmentTexturing = .automatic
-        configuration.planeDetection = [.horizontal]
-        if type(of: configuration).supportsFrameSemantics(.sceneDepth) {
-           configuration.frameSemantics = .sceneDepth
+    func initConfig() -> ARWorldTrackingConfiguration {
+        let config = ARWorldTrackingConfiguration()
+        config.sceneReconstruction = .meshWithClassification
+        config.environmentTexturing = .automatic
+        config.planeDetection = [.horizontal]
+        if type(of: config).supportsFrameSemantics(.sceneDepth) {
+            config.frameSemantics = .sceneDepth
         }
 
-        return configuration
+        return config
     }
     
     func addGesture() {
@@ -80,7 +81,7 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 
             sphere.generateCollisionShapes(recursive: false)
             sphere.physicsBody = .init()
-            sphere.physicsBody?.mode = .static//是否静止
+            sphere.physicsBody?.mode = .dynamic//是否静止
             sphere.physicsMotion =  PhysicsMotionComponent(linearVelocity: linearVelocity,
                                                            angularVelocity: [0, 0, 0])
 
@@ -99,8 +100,8 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 //                translation.columns.3.z = -0.2
 //            }
            
-//            translation.columns.3.z = -0.3
-            translation.columns.3.y = 0.05
+            translation.columns.3.z = -0.1
+            translation.columns.3.y = 0.01
            return simd_mul(cameraTransform, translation)
         }
         
@@ -134,6 +135,7 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 
             resultAnchor.addChild(ball)
             arView.scene.addAnchor(resultAnchor)
+            print("添加 球 成功")
         }
         addObjectOnTappedPoint()
     }
