@@ -50,12 +50,16 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
     
     func initView(){
         arView = ARView.init(frame: view.bounds)
+        #if targetEnvironment(simulator)
+        #else
         arView.environment.sceneUnderstanding.options = []
         arView.environment.sceneUnderstanding.options.insert(.occlusion)
         arView.environment.sceneUnderstanding.options.insert(.physics)
         arView.renderOptions = [.disablePersonOcclusion, .disableDepthOfField, .disableMotionBlur]
         arView.automaticallyConfigureSession = false
         arView.session = self.session
+        
+        #endif
     }
     
     func initConfig() {
@@ -159,6 +163,9 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
         }
         
         func addObjectOnTappedPoint() {
+            #if targetEnvironment(simulator)
+            #else
+            
             guard let currentFrame = arView.session.currentFrame else {return}
             let cameraTransform = currentFrame.camera.transform
 
@@ -180,6 +187,7 @@ class MTOcclusionVC: MTARBaseVC,ARSessionDelegate {
 
             resultAnchor.addChild(ball)
             arView.scene.addAnchor(resultAnchor)
+            #endif
             print("添加 球 成功")
         }
         addObjectOnTappedPoint()

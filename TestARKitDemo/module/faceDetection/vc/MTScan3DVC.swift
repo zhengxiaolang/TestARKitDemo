@@ -40,11 +40,16 @@ class MTScan3DVC: MTARBaseVC , ARSessionDelegate{
     }
     
     override func actionAfterViewDidLoad() {
+        #if targetEnvironment(simulator)
+        #else
         arView.session.run(config)
+        #endif
     }
     
     func initView(){
         arView = ARView.init(frame: view.bounds)
+        #if targetEnvironment(simulator)
+        #else
         arView.environment.sceneUnderstanding.options = []
         arView.environment.sceneUnderstanding.options.insert(.occlusion)
         arView.environment.sceneUnderstanding.options.insert(.physics)
@@ -54,6 +59,7 @@ class MTScan3DVC: MTARBaseVC , ARSessionDelegate{
         arView.debugOptions.insert(.showSceneUnderstanding)
         
         arView.session = session
+        #endif
     }
     
     func initConfig() {
@@ -71,6 +77,8 @@ class MTScan3DVC: MTARBaseVC , ARSessionDelegate{
 // Mark -  导出按钮事件
     @objc
     func exportAction() {
+        #if targetEnvironment(simulator)
+        #else
         guard let camera = arView.session.currentFrame?.camera else {return}
 
         func convertToAsset(meshAnchors: [ARMeshAnchor]) -> MDLAsset? {
@@ -110,5 +118,6 @@ class MTScan3DVC: MTARBaseVC , ARSessionDelegate{
                 print("导出报错")
             }
         }
+        #endif
     }
 }
